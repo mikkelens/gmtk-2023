@@ -74,3 +74,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 Packages/com.singularitygroup.hotreload
+Packages/packages-lock.json

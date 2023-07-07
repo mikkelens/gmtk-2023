@@ -4,3 +4,6 @@
 [submodule "Packages/com.singularitygroup.hotreload"]
 	path = Packages/com.singularitygroup.hotreload
 	url = https://gitlab.hotreload.net/root/hot-reload-releases
+[submodule "Assets/Scripts/Tools"]
+	path = Assets/Scripts/Tools
+	url = https://github.com/mikkelens/unity-script-tools

@@ -78,18 +78,19 @@ MonoBehaviour:
       m_Action: Next Level Hotkey
       m_Flags: 0
     m_Flags: 0
-  smoothLoadTime: 0.25
+  smoothLoadTime: 0.5
   uiPrefab: {fileID: 1388194326226555456, guid: 92928645e1717bf4182046ddd883c510, type: 3}
   gameHub:
     sceneAsset: {fileID: 102900000, guid: f084df28f1c9861428e7e223ef2d2fe7, type: 3}
     scenePath: Assets/Scenes/GameHub.unity
   levels:
   - <LevelScene>k__BackingField:
-      sceneAsset: {fileID: 0}
-      scenePath: 
+      sceneAsset: {fileID: 102900000, guid: 37a8c246569fe544786a068b8c76488b, type: 3}
+      scenePath: Assets/Scenes/ButtonScene.unity
     <FailScene>k__BackingField:
       sceneAsset: {fileID: 0}
       scenePath: 
     <WinScene>k__BackingField:
       sceneAsset: {fileID: 0}
       scenePath: 
+  sceneState: 1

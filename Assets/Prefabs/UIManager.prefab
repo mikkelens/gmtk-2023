@@ -179,7 +179,7 @@ RectTransform:
   - {fileID: 8319408262484458890}
   - {fileID: 3638732052388801720}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede114ce0de6f3f47b05d60814b5432a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadFadeImage: {fileID: 0}
+  loadFadeImage: {fileID: 9036008528245095111}
   loadFadeCurve:
     serializedVersion: 2
     m_Curve:

@@ -7,3 +7,6 @@
 [submodule "Assets/Scripts/Tools"]
 	path = Assets/Scripts/Tools
 	url = https://github.com/mikkelens/unity-script-tools
+[submodule "Assets/WebGLTemplates"]
+	path = Assets/WebGLTemplates
+	url = https://github.com/mikkelens/unity-webgl-template

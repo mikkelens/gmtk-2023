@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3892664327783873989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6618391692984415971}
+  - component: {fileID: 4412257500034927309}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6618391692984415971
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3892664327783873989}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4412257500034927309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3892664327783873989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d7ee35a7f2b1b645aecb813299b394f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hubHotkey:
+    m_Name: Hub Hotkey
+    m_Type: 1
+    m_ExpectedControlType: 
+    m_Id: ba348ecb-2dd6-4e0d-9e51-6d0ba660e9de
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: e17e15e3-67ed-4cdd-9221-7ff3f5594dc9
+      m_Path: <Keyboard>/h
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Hub Hotkey
+      m_Flags: 0
+    m_Flags: 0
+  nextLevelHotkey:
+    m_Name: Next Level Hotkey
+    m_Type: 1
+    m_ExpectedControlType: 
+    m_Id: 07a8809b-2a73-4ceb-a1dd-dbdba9ecc4c0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: b56ed4a2-96a4-4178-bd86-9792ff54801b
+      m_Path: <Keyboard>/n
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Next Level Hotkey
+      m_Flags: 0
+    m_Flags: 0
+  smoothLoadTime: 0.5
+  uiPrefab: {fileID: 1388194326226555456, guid: 92928645e1717bf4182046ddd883c510, type: 3}
+  gameHub:
+    sceneAsset: {fileID: 102900000, guid: f084df28f1c9861428e7e223ef2d2fe7, type: 3}
+    scenePath: Assets/Scenes/GameHub.unity
+  levels:
+  - <LevelScene>k__BackingField:
+      sceneAsset: {fileID: 102900000, guid: 37a8c246569fe544786a068b8c76488b, type: 3}
+      scenePath: Assets/Scenes/ButtonScene.unity
+    <FailScene>k__BackingField:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    <WinScene>k__BackingField:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+  sceneState: 1

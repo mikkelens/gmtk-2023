@@ -1,3 +1,6 @@
 [submodule "Assets/Plugins"]
 	path = Assets/Plugins
 	url = https://github.com/mikkelens/my-plugins
+[submodule "Packages/com.singularitygroup.hotreload"]
+	path = Packages/com.singularitygroup.hotreload
+	url = https://gitlab.hotreload.net/root/hot-reload-releases

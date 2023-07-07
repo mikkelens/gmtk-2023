@@ -141,6 +141,10 @@ PrefabInstance:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 2840639454970122879, guid: 4a8b029670f3d6e468e9066ecad5fb2e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6141063255474046198, guid: a2b90a67bb2a54944b07563507f6662e, type: 2}
     - target: {fileID: 3981629690355616607, guid: 4a8b029670f3d6e468e9066ecad5fb2e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -249,7 +253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6618391692984415971, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6618391692984415971, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -644,7 +648,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &1147637111
 Canvas:
   m_ObjectHideFlags: 0
@@ -657,12 +661,12 @@ Canvas:
   m_RenderMode: 2
   m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -677,17 +681,17 @@ RectTransform:
   m_GameObject: {fileID: 1147637108}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.018484289, y: 0.018484289, z: 0.018484289}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.018656716, y: 0.018656716, z: 0.018656716}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1016120173}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 961, y: 541}
+  m_SizeDelta: {x: 952.00006, y: 536}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1452302510
 GameObject:
@@ -700,7 +704,7 @@ GameObject:
   - component: {fileID: 1452302512}
   - component: {fileID: 1452302511}
   m_Layer: 0
-  m_Name: inspection dialogue
+  m_Name: background image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -771,7 +775,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1542588074
 PrefabInstance:
@@ -789,6 +793,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Nuh-uh!
       objectReference: {fileID: 0}
+    - target: {fileID: 2840639454970122879, guid: 4a8b029670f3d6e468e9066ecad5fb2e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6141063255474046198, guid: a2b90a67bb2a54944b07563507f6662e, type: 2}
     - target: {fileID: 3981629690355616607, guid: 4a8b029670f3d6e468e9066ecad5fb2e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -897,7 +905,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2840639454970122879, guid: 4a8b029670f3d6e468e9066ecad5fb2e, type: 3}
       propertyPath: m_fontSize
-      value: 18
+      value: 24.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840639454970122879, guid: 4a8b029670f3d6e468e9066ecad5fb2e, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840639454970122879, guid: 4a8b029670f3d6e468e9066ecad5fb2e, type: 3}
+      propertyPath: checkPaddingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840639454970122879, guid: 4a8b029670f3d6e468e9066ecad5fb2e, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3981629690355616607, guid: 4a8b029670f3d6e468e9066ecad5fb2e, type: 3}
       propertyPath: m_Pivot.x

@@ -155,7 +155,8 @@ namespace Core
 
             if (_currentLevel == null)
             {
-                Debug.LogError("Current level is null!");
+                Debug.LogWarning("Current level is null!");
+                ReturnToHub();
                 return;
             }
 

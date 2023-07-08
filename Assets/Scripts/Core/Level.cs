@@ -4,12 +4,12 @@ using JetBrains.Annotations;
 using Tools.Types;
 using UnityEngine;
 
-namespace Scripts.Core
+namespace Core
 {
 	[Serializable]
 	public class Level
 	{
-		[SerializeField, UsedImplicitly] private string name = "Unnamed Level";
+		[field: SerializeField, UsedImplicitly] private string Name { get; set; } = "Unnamed Level";
 		[field: SerializeField] public List<Segment> PreparationSegments { get; private set; }
 		[field: SerializeField] public List<ActionSegment> ActionSegments { get; private set; }
 		[field: SerializeField] public List<SceneReference> Ending { get; private set; }

@@ -120,25 +120,32 @@ MonoBehaviour:
   gameOver:
     sceneAsset: {fileID: 0}
     scenePath: 
+  allLevelScenes: []
   levels:
-  - name: BOMBS
+  - <Name>k__BackingField: BOMBS
     <PreparationSegments>k__BackingField:
     - <SegmentScene>k__BackingField:
-        sceneAsset: {fileID: 0}
-        scenePath: 
+        sceneAsset: {fileID: 102900000, guid: 0a5291cceedbf804b8a8e273ad4e67f4, type: 3}
+        scenePath: Assets/Scenes/Game/GameDressUp.unity
     <ActionSegments>k__BackingField:
     - <SegmentScene>k__BackingField:
+        sceneAsset: {fileID: 102900000, guid: 1982d6360314105418584cfe13c3b3c9, type: 3}
+        scenePath: Assets/Scenes/Game/GameQueueSim.unity
+      <FailScene>k__BackingField:
         sceneAsset: {fileID: 0}
         scenePath: 
+    - <SegmentScene>k__BackingField:
+        sceneAsset: {fileID: 102900000, guid: db20a8738c0bac24e8299617533997b0, type: 3}
+        scenePath: Assets/Scenes/Game/GameBombCook.unity
       <FailScene>k__BackingField:
         sceneAsset: {fileID: 0}
         scenePath: 
     <Ending>k__BackingField: []
-  - name: SMUGGLE
+  - <Name>k__BackingField: SMUGGLE
     <PreparationSegments>k__BackingField: []
     <ActionSegments>k__BackingField: []
     <Ending>k__BackingField: []
-  - name: EVADETAXES
+  - <Name>k__BackingField: EVADE TAXES
     <PreparationSegments>k__BackingField: []
     <ActionSegments>k__BackingField: []
     <Ending>k__BackingField: []

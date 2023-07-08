@@ -439,53 +439,89 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
-      propertyPath: levels.Array.size
+      propertyPath: allLevelScenes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: prevLevelsList.Array.size
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
-      propertyPath: nextSegmentHotkey.m_Id
-      value: 3cf01ea3-b46b-445e-9bee-0ee0975473b7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
-      propertyPath: nextSegmentHotkey.m_Name
-      value: Next Segment Hotkey
-      objectReference: {fileID: 0}
-    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
-      propertyPath: levels.Array.data[0].name
+      propertyPath: prevLevelsList.Array.data[0].name
       value: BOMBS
       objectReference: {fileID: 0}
     - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
-      propertyPath: levels.Array.data[1].name
+      propertyPath: prevLevelsList.Array.data[1].name
       value: SMUGGLE
       objectReference: {fileID: 0}
     - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
-      propertyPath: levels.Array.data[2].name
+      propertyPath: prevLevelsList.Array.data[2].name
       value: EVADETAXES
       objectReference: {fileID: 0}
     - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
-      propertyPath: nextSegmentHotkey.m_SingletonActionBindings.Array.size
+      propertyPath: allLevelScenes.Array.data[0].scenePath
+      value: Assets/Scenes/Game/GameHub.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: allLevelScenes.Array.data[1].scenePath
+      value: Assets/Scenes/Game/GameDressUp.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: allLevelScenes.Array.data[2].scenePath
+      value: Assets/Scenes/Game/GameQueueSim.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: allLevelScenes.Array.data[3].scenePath
+      value: Assets/Scenes/Game/GameBombCook.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: allLevelScenes.Array.data[0].sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: f084df28f1c9861428e7e223ef2d2fe7, type: 3}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: allLevelScenes.Array.data[1].sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 0a5291cceedbf804b8a8e273ad4e67f4, type: 3}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: allLevelScenes.Array.data[2].sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 1982d6360314105418584cfe13c3b3c9, type: 3}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: allLevelScenes.Array.data[3].sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: db20a8738c0bac24e8299617533997b0, type: 3}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: prevLevelsList.Array.data[0].<ActionSegments>k__BackingField.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: prevLevelsList.Array.data[0].<PreparationSegments>k__BackingField.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
-      propertyPath: nextSegmentHotkey.m_SingletonActionBindings.Array.data[0].m_Id
-      value: 036c00f0-a257-4152-ab28-95f395e77c6d
+      propertyPath: prevLevelsList.Array.data[0].<ActionSegments>k__BackingField.Array.data[0].<SegmentScene>k__BackingField.scenePath
+      value: Assets/Scenes/Game/GameQueueSim.unity
       objectReference: {fileID: 0}
     - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
-      propertyPath: levels.Array.data[0].<ActionSegments>k__BackingField.Array.size
-      value: 1
+      propertyPath: prevLevelsList.Array.data[0].<ActionSegments>k__BackingField.Array.data[1].<SegmentScene>k__BackingField.scenePath
+      value: Assets/Scenes/Game/GameBombCook.unity
       objectReference: {fileID: 0}
     - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
-      propertyPath: nextSegmentHotkey.m_SingletonActionBindings.Array.data[0].m_Path
-      value: <Keyboard>/s
+      propertyPath: prevLevelsList.Array.data[0].<ActionSegments>k__BackingField.Array.data[0].<SegmentScene>k__BackingField.sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 1982d6360314105418584cfe13c3b3c9, type: 3}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: prevLevelsList.Array.data[0].<ActionSegments>k__BackingField.Array.data[1].<SegmentScene>k__BackingField.sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: db20a8738c0bac24e8299617533997b0, type: 3}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: prevLevelsList.Array.data[0].<PreparationSegments>k__BackingField.Array.data[0].<SegmentScene>k__BackingField.scenePath
+      value: Assets/Scenes/Game/GameDressUp.unity
       objectReference: {fileID: 0}
     - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
-      propertyPath: nextSegmentHotkey.m_SingletonActionBindings.Array.data[0].m_Action
-      value: Next Segment Hotkey
-      objectReference: {fileID: 0}
-    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
-      propertyPath: levels.Array.data[0].<PreparationSegments>k__BackingField.Array.size
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: prevLevelsList.Array.data[0].<PreparationSegments>k__BackingField.Array.data[0].<SegmentScene>k__BackingField.sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 0a5291cceedbf804b8a8e273ad4e67f4, type: 3}
     - target: {fileID: 6618391692984415971, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
       propertyPath: m_RootOrder
       value: 3

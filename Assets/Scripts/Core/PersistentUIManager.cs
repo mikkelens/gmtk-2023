@@ -3,7 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Scripts.Core
+namespace Core
 {
 	public class PersistentUIManager : PersistentSingleton<PersistentUIManager>
 	{

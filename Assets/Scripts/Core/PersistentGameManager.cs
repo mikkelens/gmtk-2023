@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Scripts.Core.Data;
+using Core.Data;
 using Sirenix.OdinInspector;
 using Tools.Types;
 using Tools.Utils;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-namespace Scripts.Core
+namespace Core
 {
     public class PersistentGameManager : PersistentSingleton<PersistentGameManager>
     {
@@ -28,8 +29,52 @@ namespace Scripts.Core
         [SerializeField, Required] private SceneReference gameHub;
         [SerializeField, Required] private SceneReference gameOver;
 
-        private bool ValidateLevelList => levels.Count > 0;
-        [ValidateInput(nameof(ValidateLevelList), "No levels assigned!", InfoMessageType.Warning)]
+        private bool ValidateListNonEmpty => levels.Count > 0;
+        #if UNITY_EDITOR
+        [SerializeField, HideInInspector] private List<SceneReference> allLevelScenes;
+        private bool ListIsRepresentedInBuildSettings
+        {
+            get
+            {
+                allLevelScenes = new List<SceneReference>
+                {
+                    gameHub,
+                    gameOver
+                };
+                foreach (Level level in levels)
+                {
+                    allLevelScenes.AddRange(level.PreparationSegments.Select(x => x.SegmentScene));
+                    allLevelScenes.AddRange(level.ActionSegments.Select(x => x.SegmentScene));
+                    allLevelScenes.AddRange(level.ActionSegments.Select(x => x.FailScene));
+                    allLevelScenes.AddRange(level.Ending);
+                }
+                allLevelScenes.RemoveAll(x => x.ScenePath == string.Empty);
+
+                if (!allLevelScenes.All(scene => EditorBuildSettings.scenes.Any(x => x.path == scene.ScenePath)))
+                    return false;
+                return true;
+            }
+        }
+        private const string LevelGroupID = "LevelGroup";
+        [VerticalGroup(LevelGroupID)]
+        [DisableIf(nameof(ListIsRepresentedInBuildSettings))]
+        [Button("Add missing scenes to build settings")]
+        private void AddMissingScenesToBuildSettings()
+        {
+            List<EditorBuildSettingsScene> buildScenes = EditorBuildSettings.scenes.ToList();
+            foreach (EditorBuildSettingsScene wantedScene in allLevelScenes.Select(x => new EditorBuildSettingsScene(x.ScenePath, true)))
+            {
+                if (!buildScenes.Contains(wantedScene))
+                {
+                    buildScenes.Add(wantedScene);
+                }
+            }
+            EditorBuildSettings.scenes = buildScenes.ToArray();
+        }
+        [VerticalGroup(LevelGroupID)]
+        #endif
+        [ValidateInput(nameof(ListIsRepresentedInBuildSettings), "Build settings is missing some of these scenes!", ContinuousValidationCheck = true)]
+        [ValidateInput(nameof(ValidateListNonEmpty), "No levels assigned!", InfoMessageType.Warning)]
         [SerializeField] private List<Level> levels;
         #endregion
 
@@ -159,7 +204,7 @@ namespace Scripts.Core
             {
                 yield return new WaitForSeconds(Time.deltaTime);
                 t = transitionStartTime.TimeSince() / smoothLoadTime;
-                GetUIInfallible().SetTransitionImageWithT(t);
+                _uiManager.SetTransitionImageWithT(t);
             } while (t <= 1f);
 
             SceneManager.LoadScene(scene.ScenePath);
@@ -170,13 +215,14 @@ namespace Scripts.Core
             {
                 yield return new WaitForSeconds(Time.deltaTime);
                 t = transitionStartTime.TimeSince() / smoothLoadTime;
-                GetUIInfallible().SetTransitionImageWithT(1f - t);
+                _uiManager.SetTransitionImageWithT(1f - t);
             } while (t <= 1f);
 
             _loading = false;
         }
 
         public PassportData PassportData { get; set; }
+        public BombData BombData { get; set; }
 
         private PersistentUIManager GetUIInfallible()
         {

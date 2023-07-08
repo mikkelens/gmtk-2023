@@ -40,6 +40,7 @@ namespace Core
 		{
 			if (_remainingDialogue.FirstOrDefault() is not { } next)
 			{
+				Debug.Log("No more dialogue checks...");
 				PersistentGameManager.Instance.NextSegment();
 				return;
 			}

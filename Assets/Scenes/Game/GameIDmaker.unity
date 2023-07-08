@@ -200,22 +200,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NAME:
     input: {fileID: 1427448653}
-    expected: {fileID: 0}
+    expected: {fileID: 320469756}
   DOB:
     input: {fileID: 958329064}
-    expected: {fileID: 0}
+    expected: {fileID: 1249249631}
   Sex:
     input: {fileID: 1865920169}
-    expected: {fileID: 0}
+    expected: {fileID: 673663771}
   ISS:
     input: {fileID: 1866168811}
-    expected: {fileID: 0}
+    expected: {fileID: 1116955815}
   EXP:
     input: {fileID: 1352677059}
-    expected: {fileID: 0}
+    expected: {fileID: 528154863}
   ID:
     input: {fileID: 663386710}
-    expected: {fileID: 0}
+    expected: {fileID: 2055507136}
 --- !u!1 &115686712
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,6 +26,7 @@ namespace Core
         [SerializeField, Required, AssetsOnly] private PersistentUIManager uiPrefab;
 
         [Header("Levels and Scenes")]
+        [SerializeField] private SceneType sceneType;
         [SerializeField, Required] private SceneReference gameHub;
         [SerializeField, Required] private SceneReference gameOver;
 
@@ -102,7 +103,6 @@ namespace Core
         #endif
 
         private bool _loading;
-        private SceneType _sceneType;
         private enum SceneType
         {
             Hub,
@@ -120,13 +120,13 @@ namespace Core
 
         public void ReturnToHub()
         {
-            if (_loading || _sceneType == SceneType.Hub) return;
+            if (_loading || sceneType == SceneType.Hub) return;
             StartCoroutine(SmoothLoad(gameHub));
         }
 
         public void StartNewLevel()
         {
-            if (_loading || _sceneType == SceneType.LevelSegment) return;
+            if (_loading || sceneType == SceneType.LevelSegment) return;
 
             _currentLevel = _remainingLevels.FirstOrDefault();
             if (_currentLevel == null)
@@ -151,7 +151,7 @@ namespace Core
 
         public void NextSegment()
         {
-            if (_loading || _sceneType == SceneType.Hub) return;
+            if (_loading || sceneType == SceneType.Hub) return;
 
             if (_currentLevel == null)
             {
@@ -173,7 +173,7 @@ namespace Core
 
         public void SegmentFailure() // assume this would only be called where it makes sense
         {
-            if (_loading || _sceneType == SceneType.Hub) return;
+            if (_loading || sceneType == SceneType.Hub) return;
 
             if (_currentSegment is not Level.ActionSegment actionSegment)
             {
@@ -220,6 +220,8 @@ namespace Core
 
             _loading = false;
         }
+
+        public float SusMeter { get ; set ; }
 
         public PassportData PassportData { get; set; }
         public BombData BombData { get; set; }

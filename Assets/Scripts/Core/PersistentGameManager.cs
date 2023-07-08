@@ -155,7 +155,8 @@ namespace Core
 
             if (_currentLevel == null)
             {
-                Debug.LogError("Current level is null!");
+                Debug.LogWarning("Current level is null!");
+                ReturnToHub();
                 return;
             }
 
@@ -174,6 +175,8 @@ namespace Core
         public void SegmentFailure() // assume this would only be called where it makes sense
         {
             if (_loading || sceneType == SceneType.Hub) return;
+
+            Debug.Log("SUS SPOTTED");
 
             if (_currentSegment is not Level.ActionSegment actionSegment)
             {
@@ -221,7 +224,7 @@ namespace Core
             _loading = false;
         }
 
-        public float SusMeter { get ; set ; }
+        public int SusMeter { get ; set ; }
 
         public PassportData PassportData { get; set; }
         public BombData BombData { get; set; }

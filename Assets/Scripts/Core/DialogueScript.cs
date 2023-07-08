@@ -5,6 +5,7 @@ using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 namespace Core
 {
@@ -41,6 +42,8 @@ namespace Core
 		[SerializeField, Required] private AnimatedGuardScript guard;
 		[SerializeField] private int guardSusAmount = 20;
 		[SerializeField] private int guardMegaSusAmount = 50;
+		[SerializeField] private string detectionString = "!";
+		[SerializeField] private string undetectedString = "Alright, carry on.";
 
 		[Header("Option references")]
 		[SerializeField, Required] private TextAnimateScript option1Text;
@@ -50,7 +53,8 @@ namespace Core
 		[SerializeField, Required] private Button option2Button;
 		[SerializeField, Required] private Button option3Button;
 
-		[SerializeField] private float pauseAfterMessage = 0.6f;
+		[SerializeField] private float pauseAfterMessage = 0.3f;
+		[SerializeField] private float susDetectedDelay = 1f;
 		[SerializeField] private float endDelay = 2.5f;
 
 		private void Start()
@@ -79,7 +83,7 @@ namespace Core
 			if (_remainingDialogue.FirstOrDefault() is not { } next)
 			{
 				Debug.Log("No more dialogue checks...");
-				StartCoroutine(EndConversation());
+				StartCoroutine(UndetectedEnd());
 				return;
 			}
 			_currentCheck = next;
@@ -121,10 +125,26 @@ namespace Core
 			SetButtonInteractable(false);
 			yield return new WaitWhile(AnyTextAnimating);
 			yield return new WaitForSeconds(pauseAfterMessage);
-			PersistentGameManager.Instance.SusMeter += chosenOption.Reaction.SusAmount;
-			guard.GuardSpriteRenderer.sprite = GetGuardSprite(PersistentGameManager.Instance.SusMeter);
+			AddSus(chosenOption.Reaction.SusAmount);
+			yield return new WaitForSeconds(pauseAfterMessage);
+			if (PersistentGameManager.Instance.SusMeter >= guardMegaSusAmount)
+			{
+				int coinflip = Random.Range(0, 100); // 0-99
+				if (coinflip > PersistentGameManager.Instance.SusMeter)
+				{
+					StartCoroutine(SusDetectedEnd());
+					yield break;
+				}
+			}
 			SetNextCheck();
 		}
+
+		private void AddSus(int amount)
+		{
+			PersistentGameManager.Instance.SusMeter += amount;
+			guard.GuardSpriteRenderer.sprite = GetGuardSprite(PersistentGameManager.Instance.SusMeter);
+		}
+
 		private Sprite GetGuardSprite(int susMeter)
 		{
 			if (susMeter < guardSusAmount) return guard.NormalSprite;
@@ -132,13 +152,28 @@ namespace Core
 			return guard.MegaSusSprite;
 		}
 
-		private IEnumerator EndConversation()
+		private IEnumerator SusDetectedEnd()
 		{
+			Debug.Log("Not sus");
+			// remove options
+			SetButtonTextEmpty();
+			SetButtonInteractable(false);
+
+			yield return StartCoroutine(guardText.AnimateText(detectionString));
+			yield return new WaitForSeconds(susDetectedDelay);
+			PersistentGameManager.Instance.SegmentFailure();
+		}
+
+		private IEnumerator UndetectedEnd()
+		{
+			Debug.Log("Not sus");
 			// remove options
 			SetButtonTextEmpty();
 			SetButtonInteractable(false);
 
 			// wait then continue/return
+			AddSus(-100);
+			yield return StartCoroutine(guardText.AnimateText(undetectedString));
 			yield return new WaitForSeconds(endDelay);
 			PersistentGameManager.Instance.NextSegment();
 		}

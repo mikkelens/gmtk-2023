@@ -176,6 +176,8 @@ namespace Core
         {
             if (_loading || sceneType == SceneType.Hub) return;
 
+            Debug.Log("SUS SPOTTED");
+
             if (_currentSegment is not Level.ActionSegment actionSegment)
             {
                 Debug.LogError("Current segment is not an action segment!");

@@ -20,18 +20,18 @@ public class InfoGenScript : MonoBehaviour
         
         
 
-        Birth.text = "Birth: " + Random.Range(1940, 1971) + "." + Random.Range(1, 13) + "." + Random.Range(1, 31);
+        Birth.text = Random.Range(1940, 1971) + "." + Random.Range(1, 13) + "." + Random.Range(1, 31);
 
         if (Random.Range(1,3) > 1)
         {
-            Sex.text = "Sex: Male";
+            Sex.text = "Male";
         }
         else
         {
-            Sex.text = "Sex: Female";
+            Sex.text = "Female";
         }
 
-        Exp.text = "Exp: " + Random.Range(1983, 1989) + "." + Random.Range(1, 13) + "." + Random.Range(1, 31);
+        Exp.text = Random.Range(1983, 1989) + "." + Random.Range(1, 13) + "." + Random.Range(1, 31);
 
         
         if (Random.Range(1, 3) > 1)
@@ -49,24 +49,24 @@ public class InfoGenScript : MonoBehaviour
         {
             if (Random.Range(1, 3) > 1)
             {
-                Home.text = Home.text + "Iss: East ";
+                Home.text = Home.text + "East ";
             }
             else
             {
-                Home.text = Home.text + "Iss: West ";
+                Home.text = Home.text + "West ";
             }
         }
         Home.text = Home.text + regionList[Random.Range(0, regionList.Count)];
 
-        ID.text = "ID: " + Random.Range( 10000 , 100000) + "-" + Random.Range(10000, 100000);
+        ID.text = Random.Range( 10000 , 100000) + "-" + Random.Range(10000, 100000);
 
-        if (Sex.text == "Sex: Male")
+        if (Sex.text == "Male")
         {
-            Name.text = "Name: " + nameListFirstM[Random.Range(0, nameListFirstM.Count)];
+            Name.text = nameListFirstM[Random.Range(0, nameListFirstM.Count)];
         }
         else
         {
-            Name.text = "Name: " + nameListFirstF[Random.Range(0, nameListFirstF.Count)];
+            Name.text = nameListFirstF[Random.Range(0, nameListFirstF.Count)];
         }
         if (Random.Range(1, 3) > 1)
         {

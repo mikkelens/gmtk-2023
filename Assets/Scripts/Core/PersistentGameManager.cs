@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Scripts.Core.Data;
 using Sirenix.OdinInspector;
 using Tools.Types;
 using Tools.Utils;

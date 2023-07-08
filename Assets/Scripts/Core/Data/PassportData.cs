@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Scripts.Core
+namespace Scripts.Core.Data
 {
 	[SuppressMessage("ReSharper", "InconsistentNaming")]
 	public struct PassportData

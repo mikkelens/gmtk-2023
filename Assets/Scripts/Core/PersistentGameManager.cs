@@ -109,6 +109,7 @@ namespace Core
             LevelSegment
         }
         private List<Level> _remainingLevels;
+        public List<Level> RemainingLevelsCopy => new List<Level>(_remainingLevels);
         private Level _currentLevel;
         private Level.Segment _currentSegment;
 
@@ -116,11 +117,23 @@ namespace Core
         {
             _remainingLevels = new List<Level>(levels);
             _uiManager = GetUIInfallible();
+            #if UNITY_EDITOR
+            if (!_loading)
+            {
+                StartCoroutine(WaitThenFadeUp());
+            }
+        }
+        private IEnumerator WaitThenFadeUp() // only used when starting playmode
+        {
+            yield return FadeToBlack(0.08f);
+            yield return FadeFromBlack(smoothLoadTime);
+            #endif
         }
 
         public void ReturnToHub()
         {
             if (_loading || sceneType == SceneType.Hub) return;
+            sceneType = SceneType.Hub;
             StartCoroutine(SmoothLoad(gameHub));
         }
 
@@ -136,6 +149,7 @@ namespace Core
             }
 
             _currentLevel.remainingSegments = new List<Level.Segment>(_currentLevel.PreparationSegments);
+            _currentLevel.remainingSegments.AddRange(_currentLevel.ActionSegments); // flow directly
 
             _currentSegment = _currentLevel.remainingSegments.FirstOrDefault();
             if (_currentSegment == null)
@@ -143,6 +157,8 @@ namespace Core
                 Debug.LogError("No first segment in level!");
                 return;
             }
+
+            sceneType = SceneType.LevelSegment;
 
             _remainingLevels.Remove(_currentLevel);
             _currentLevel.remainingSegments.Remove(_currentSegment);
@@ -200,28 +216,37 @@ namespace Core
         {
             _loading = true;
 
-            float t;
-            // fade to black
-            float transitionStartTime = Time.time;
-            do
-            {
-                yield return new WaitForSeconds(Time.deltaTime);
-                t = transitionStartTime.TimeSince() / smoothLoadTime;
-                _uiManager.SetTransitionImageWithT(t);
-            } while (t <= 1f);
+            yield return FadeToBlack(smoothLoadTime);
 
             SceneManager.LoadScene(scene.ScenePath);
 
-            // fade from black
-            transitionStartTime = Time.time;
+            yield return FadeFromBlack(smoothLoadTime);
+
+            _loading = false;
+        }
+        private IEnumerator FadeToBlack(float fadeTime)
+        {
+            float time = 0;
+            float t;
             do
             {
                 yield return new WaitForSeconds(Time.deltaTime);
-                t = transitionStartTime.TimeSince() / smoothLoadTime;
+                time += Time.deltaTime;
+                t = time / fadeTime;
+                _uiManager.SetTransitionImageWithT(t);
+            } while (t <= 1f);
+        }
+        private IEnumerator FadeFromBlack(float fadeTime)
+        {
+            float time = 0;
+            float t;
+            do
+            {
+                yield return new WaitForSeconds(Time.deltaTime);
+                time += Time.deltaTime;
+                t = time / fadeTime;
                 _uiManager.SetTransitionImageWithT(1f - t);
             } while (t <= 1f);
-
-            _loading = false;
         }
 
         public int SusMeter { get ; set ; }

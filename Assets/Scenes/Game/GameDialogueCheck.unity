@@ -251,6 +251,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: levels.Array.data[0].name
+      value: Test Level
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: levels.Array.data[0].<Segments>k__BackingField.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6618391692984415971, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
       propertyPath: m_RootOrder
       value: 2

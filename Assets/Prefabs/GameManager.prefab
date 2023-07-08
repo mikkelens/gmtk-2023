@@ -78,11 +78,28 @@ MonoBehaviour:
       m_Action: Next Level Hotkey
       m_Flags: 0
     m_Flags: 0
+  nextSegmentHotkey:
+    m_Name: Next Segment Hotkey
+    m_Type: 1
+    m_ExpectedControlType: 
+    m_Id: 3cf01ea3-b46b-445e-9bee-0ee0975473b7
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 036c00f0-a257-4152-ab28-95f395e77c6d
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Next Segment Hotkey
+      m_Flags: 0
+    m_Flags: 0
   gameOverHotkey:
     m_Name: Game Over Hotkey
     m_Type: 1
     m_ExpectedControlType: 
-    m_Id: a7285a56-80a8-438a-98de-5aded9c68365
+    m_Id: 1daab19a-efff-4334-84d0-44a3015b328f
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
@@ -95,22 +112,33 @@ MonoBehaviour:
       m_Action: Game Over Hotkey
       m_Flags: 0
     m_Flags: 0
-  smoothLoadTime: 0.5
+  smoothLoadTime: 0.4
   uiPrefab: {fileID: 1388194326226555456, guid: 92928645e1717bf4182046ddd883c510, type: 3}
   gameHub:
     sceneAsset: {fileID: 102900000, guid: f084df28f1c9861428e7e223ef2d2fe7, type: 3}
-    scenePath: Assets/Scenes/GameHub.unity
+    scenePath: Assets/Scenes/Game/GameHub.unity
   gameOver:
     sceneAsset: {fileID: 0}
     scenePath: 
   levels:
-  - <LevelScene>k__BackingField:
-      sceneAsset: {fileID: 102900000, guid: 37a8c246569fe544786a068b8c76488b, type: 3}
-      scenePath: Assets/Scenes/ButtonScene.unity
-    <FailScene>k__BackingField:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    <WinScene>k__BackingField:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-  sceneState: 1
+  - name: BOMBS
+    <PreparationSegments>k__BackingField:
+    - <SegmentScene>k__BackingField:
+        sceneAsset: {fileID: 0}
+        scenePath: 
+    <ActionSegments>k__BackingField:
+    - <SegmentScene>k__BackingField:
+        sceneAsset: {fileID: 0}
+        scenePath: 
+      <FailScene>k__BackingField:
+        sceneAsset: {fileID: 0}
+        scenePath: 
+    <Ending>k__BackingField: []
+  - name: SMUGGLE
+    <PreparationSegments>k__BackingField: []
+    <ActionSegments>k__BackingField: []
+    <Ending>k__BackingField: []
+  - name: EVADETAXES
+    <PreparationSegments>k__BackingField: []
+    <ActionSegments>k__BackingField: []
+    <Ending>k__BackingField: []

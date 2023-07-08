@@ -439,12 +439,52 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
-      propertyPath: gameOverHotkey.m_Id
-      value: 1daab19a-efff-4334-84d0-44a3015b328f
+      propertyPath: levels.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
-      propertyPath: gameOverHotkey.m_Name
-      value: Game Over Hotkey
+      propertyPath: nextSegmentHotkey.m_Id
+      value: 3cf01ea3-b46b-445e-9bee-0ee0975473b7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: nextSegmentHotkey.m_Name
+      value: Next Segment Hotkey
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: levels.Array.data[0].name
+      value: BOMBS
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: levels.Array.data[1].name
+      value: SMUGGLE
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: levels.Array.data[2].name
+      value: EVADETAXES
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: nextSegmentHotkey.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: nextSegmentHotkey.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 036c00f0-a257-4152-ab28-95f395e77c6d
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: levels.Array.data[0].<ActionSegments>k__BackingField.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: nextSegmentHotkey.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/s
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: nextSegmentHotkey.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Next Segment Hotkey
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: levels.Array.data[0].<PreparationSegments>k__BackingField.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6618391692984415971, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
       propertyPath: m_RootOrder

@@ -221,6 +221,8 @@ namespace Core
             _loading = false;
         }
 
+        public float SusMeter { get ; set ; }
+
         public PassportData PassportData { get; set; }
         public BombData BombData { get; set; }
 

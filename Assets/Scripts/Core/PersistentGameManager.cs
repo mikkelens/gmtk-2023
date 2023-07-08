@@ -4,7 +4,6 @@ using System.Linq;
 using Core.Data;
 using Sirenix.OdinInspector;
 using Tools.Types;
-using Tools.Utils;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -251,7 +250,7 @@ namespace Core
 
         public int SusMeter { get ; set ; }
 
-        public PassportData PassportData { get; set; }
+        public Passport Passport { get; set; }
         public BombData BombData { get; set; }
 
         private PersistentUIManager GetUIInfallible()

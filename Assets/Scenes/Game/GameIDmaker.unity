@@ -198,6 +198,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 498e116e9fd32cf44a620a2d432c1414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NAME:
+    input: {fileID: 1427448653}
+    expected: {fileID: 0}
+  DOB:
+    input: {fileID: 958329064}
+    expected: {fileID: 0}
+  Sex:
+    input: {fileID: 1865920169}
+    expected: {fileID: 0}
+  ISS:
+    input: {fileID: 1866168811}
+    expected: {fileID: 0}
+  EXP:
+    input: {fileID: 1352677059}
+    expected: {fileID: 0}
+  ID:
+    input: {fileID: 663386710}
+    expected: {fileID: 0}
 --- !u!1 &115686712
 GameObject:
   m_ObjectHideFlags: 0
@@ -3395,7 +3413,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 461522075854889677, guid: 9be7dca06c6d3fc47892a474fbda3f0e, type: 3}
       propertyPath: m_Name
-      value: Simple Button
+      value: Submit ID Button
       objectReference: {fileID: 0}
     - target: {fileID: 2212823276898410984, guid: 9be7dca06c6d3fc47892a474fbda3f0e, type: 3}
       propertyPath: m_Pivot.x

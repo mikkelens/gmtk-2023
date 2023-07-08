@@ -10,11 +10,12 @@ namespace Core
 {
 	public class DialogueScript : MonoBehaviour
 	{
+		#region Subtypes
 		[Serializable]
 		private class DialogueReaction
 		{
 			[field: SerializeField] public string Response { get; private set; } = "(New Dialogue Reaction)";
-			[field: SerializeField] public float SusAmount { get; private set; } = 0.1f;
+			[field: SerializeField] public int SusAmount { get; private set; } = 1;
 		}
 		[Serializable]
 		private class DialogueOption
@@ -29,22 +30,28 @@ namespace Core
 			[field: SerializeField] public DialogueOption Option2 { get; private set; }
 			[field: SerializeField] public DialogueOption Option3 { get; private set; }
 		}
+		#endregion
+
 		[SerializeField] private List<DialogueCheck> dialogueList;
 		[ShowInInspector, ReadOnly] private List<DialogueCheck> _remainingDialogue;
 		private DialogueCheck _currentCheck;
 
+		[Header("Guard")]
 		[SerializeField, Required] private TextAnimateScript guardText;
+		[SerializeField, Required] private AnimatedGuardScript guard;
+		[SerializeField] private int guardSusAmount = 20;
+		[SerializeField] private int guardMegaSusAmount = 50;
 
+		[Header("Option references")]
 		[SerializeField, Required] private TextAnimateScript option1Text;
 		[SerializeField, Required] private TextAnimateScript option2Text;
 		[SerializeField, Required] private TextAnimateScript option3Text;
-
 		[SerializeField, Required] private Button option1Button;
 		[SerializeField, Required] private Button option2Button;
 		[SerializeField, Required] private Button option3Button;
 
-		// [SerializeField] private float startDelay = 2f;
-		[SerializeField] private float endDelay = 3f;
+		[SerializeField] private float pauseAfterMessage = 0.6f;
+		[SerializeField] private float endDelay = 2.5f;
 
 		private void Start()
 		{
@@ -86,6 +93,7 @@ namespace Core
 			StartCoroutine(option2Text.AnimateText(_currentCheck.Option2.Content));
 			StartCoroutine(option3Text.AnimateText(_currentCheck.Option3.Content));
 			yield return new WaitWhile(AnyTextAnimating);
+			yield return new WaitForSeconds(pauseAfterMessage);
 			SetButtonInteractable(true);
 		}
 
@@ -112,8 +120,16 @@ namespace Core
 			SetButtonTextEmpty();
 			SetButtonInteractable(false);
 			yield return new WaitWhile(AnyTextAnimating);
+			yield return new WaitForSeconds(pauseAfterMessage);
 			PersistentGameManager.Instance.SusMeter += chosenOption.Reaction.SusAmount;
+			guard.GuardSpriteRenderer.sprite = GetGuardSprite(PersistentGameManager.Instance.SusMeter);
 			SetNextCheck();
+		}
+		private Sprite GetGuardSprite(int susMeter)
+		{
+			if (susMeter < guardSusAmount) return guard.NormalSprite;
+			if (susMeter < guardMegaSusAmount) return guard.SusSprite;
+			return guard.MegaSusSprite;
 		}
 
 		private IEnumerator EndConversation()
@@ -140,6 +156,5 @@ namespace Core
 			option2Text.ClearText();
 			option3Text.ClearText();
 		}
-
 	}
 }

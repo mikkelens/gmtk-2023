@@ -1,5 +1,4 @@
-﻿using Tools.Utils;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class StretchWireScript : MonoBehaviour
 {

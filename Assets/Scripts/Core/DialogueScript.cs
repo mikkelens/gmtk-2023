@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Sirenix.OdinInspector;
+using TMPro;
 using UnityEngine;
 
 namespace Core
@@ -21,24 +23,32 @@ namespace Core
 			[field: SerializeField] public DialogueOption Option3 { get; private set; }
 		}
 		[SerializeField] private List<DialogueCheck> dialogueList;
-		private List<DialogueCheck> _remainingDialogue;
+		[ShowInInspector, ReadOnly] private List<DialogueCheck> _remainingDialogue;
 		private DialogueCheck _currentCheck;
+
+		[SerializeField, Required] private TextMeshProUGUI option1Text;
+		[SerializeField, Required] private TextMeshProUGUI option2Text;
+		[SerializeField, Required] private TextMeshProUGUI option3Text;
 
 		private void Start()
 		{
 			_remainingDialogue = new List<DialogueCheck>(dialogueList);
-			GetNextCheck();
+			SetNextCheck();
 		}
 
-		private DialogueCheck GetNextCheck()
+		private void SetNextCheck()
 		{
 			if (_remainingDialogue.FirstOrDefault() is not { } next)
 			{
 				PersistentGameManager.Instance.NextSegment();
-				return null;
+				return;
 			}
-
-			return next;
+			option1Text.text = next.Option1.Content;
+			option2Text.text = next.Option2.Content;
+			option3Text.text = next.Option3.Content;
+			_currentCheck = next;
+			_remainingDialogue.Remove(next);
+			Debug.Log("Updated Current Check");
 		}
 
 		public void ChooseOption1()
@@ -55,12 +65,9 @@ namespace Core
 		}
 		private void SelectDialogueOption(DialogueOption option)
 		{
-
-			_currentCheck = GetNextCheck();
-		}
-		private void DialogueConsequence(float sus)
-		{
-
+			Debug.Log($"Selected Dialogue {option}");
+			PersistentGameManager.Instance.SusMeter += option.SusAmount;
+			SetNextCheck();
 		}
 	}
 }

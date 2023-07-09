@@ -25,6 +25,7 @@ namespace Core
         [SerializeField, Required, AssetsOnly] private PersistentSoundtrackManager soundtrackPrefab;
 
         [Header("Levels and Scenes")]
+        [SerializeField, Required] private SceneReference mainMenu;
         [SerializeField] private SceneType sceneType;
         [SerializeField, Required] private SceneReference gameHub;
 
@@ -38,6 +39,7 @@ namespace Core
                 allLevelScenes = new List<SceneReference>
                 {
                     gameHub,
+                    mainMenu
                 };
                 foreach (Level level in levels)
                 {
@@ -101,7 +103,8 @@ namespace Core
         private enum SceneType
         {
             Hub,
-            LevelSegment
+            LevelSegment,
+            MainMenu
         }
         private List<Level> _remainingLevels;
         public List<Level> RemainingLevelsCopy => new List<Level>(_remainingLevels);
@@ -149,6 +152,13 @@ namespace Core
             if (_loading || sceneType == SceneType.Hub) return;
             sceneType = SceneType.Hub;
             StartCoroutine(SmoothLoad(gameHub));
+        }
+
+        public void GoToMainMenu()
+        {
+            if (_loading || sceneType == SceneType.MainMenu) return;
+            sceneType = SceneType.MainMenu;
+            StartCoroutine(SmoothLoad(mainMenu));
         }
 
         public void StartNewLevel()

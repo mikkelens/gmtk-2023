@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using Core;
-using System.Collections;
 
 public class StateScript : MonoBehaviour
 {

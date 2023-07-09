@@ -17,7 +17,6 @@ namespace Core
         [SerializeField] private InputAction hubHotkey = new InputAction(type: InputActionType.Button);
         [SerializeField] private InputAction nextLevelHotkey = new InputAction(type: InputActionType.Button);
         [SerializeField] private InputAction nextSegmentHotkey = new InputAction(type: InputActionType.Button);
-        [SerializeField] private InputAction gameOverHotkey = new InputAction(type: InputActionType.Button);
         #endif
 
         #region Inspector
@@ -28,7 +27,6 @@ namespace Core
         [Header("Levels and Scenes")]
         [SerializeField] private SceneType sceneType;
         [SerializeField, Required] private SceneReference gameHub;
-        [SerializeField, Required] private SceneReference gameOver;
 
         private bool ValidateListNonEmpty => levels.Count > 0;
         #if UNITY_EDITOR
@@ -40,7 +38,6 @@ namespace Core
                 allLevelScenes = new List<SceneReference>
                 {
                     gameHub,
-                    gameOver
                 };
                 foreach (Level level in levels)
                 {
@@ -88,18 +85,15 @@ namespace Core
             hubHotkey.performed += _ => ReturnToHub();
             nextLevelHotkey.performed += _ => StartNewLevel();
             nextSegmentHotkey.performed += _ => NextSegment();
-            gameOverHotkey.performed += _ => GameOver();
             hubHotkey.Enable();
             nextLevelHotkey.Enable();
             nextSegmentHotkey.Enable();
-            gameOverHotkey.Enable();
         }
         private void OnDisable()
         {
             hubHotkey.Disable();
             nextLevelHotkey.Disable();
             nextSegmentHotkey.Disable();
-            gameOverHotkey.Disable();
         }
         #endif
 
@@ -223,13 +217,6 @@ namespace Core
             _currentLevel = null;
             _currentSegment = null;
             StartCoroutine(SmoothLoad(actionSegment.FailScene));
-        }
-
-        public void GameOver() // assume this would only be called when it needs to
-        {
-            _currentLevel = null;
-            _currentSegment = null;
-            StartCoroutine(SmoothLoad(gameOver));
         }
 
         private IEnumerator SmoothLoad(SceneReference scene)

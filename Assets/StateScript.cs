@@ -28,7 +28,11 @@ public class StateScript : MonoBehaviour
             else
             {
                 if (!spawned) { spawned = true; StartCoroutine(Waiter()); }
-                if (Input.anyKeyDown || Input.GetAxis("Mouse X") != 0) { PersistentGameManager.Instance.SusMeter += 2; }
+                if (Input.anyKeyDown) { PersistentGameManager.Instance.SusMeter += 2; }
+                if (Input.GetAxis("Mouse X") != 0)
+                {
+
+                }
             }
         }
         else

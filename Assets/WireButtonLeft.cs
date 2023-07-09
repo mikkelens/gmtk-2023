@@ -26,21 +26,26 @@ public class WireButtonLeft : MonoBehaviour
             target = placeTarget.position;
         }
         wireScript.StretchBetween(source, target);
-        // if (pressed == true) { cursor.SetActive(true); wire.SetActive(true); }
-        // else
-        // {
-        //     if (placed == false)
-        //     {
-        //         cursor.SetActive(false); wire.SetActive(false);
-        //     }
-        //
-        // }
-        //
-        // if (placed == true)
-        // {
-        //     gameObject.GetComponent<Button>().interactable = false;
-        //     cursor.SetActive(false);
-        // }
+        if (pressed)
+        {
+            // cursor.SetActive(true);
+            wire.SetActive(true);
+        }
+        else
+        {
+            if (placed == false)
+            {
+                // cursor.SetActive(false);
+                wire.SetActive(false);
+            }
+
+        }
+
+        if (placed)
+        {
+            gameObject.GetComponent<Button>().interactable = false;
+            // cursor.SetActive(false);
+        }
     }
 
     private void OnDrawGizmos()

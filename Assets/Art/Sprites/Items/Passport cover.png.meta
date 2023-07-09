@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: be5a70f4b2e1bf94b8d42bd67f110ef0
+guid: 4a54f15f51147a04d995bebc938a332e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -37,18 +37,18 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 19
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,85 +123,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wiresfrfr_0
+      name: Passport cover_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 117
-        width: 85
-        height: 20
+        x: 0
+        y: 0
+        width: 109
+        height: 162
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 19, y: 0, z: 19, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd63ec4e36f1a4f4ea018edb35945537
-      internalID: 532582549
+      spriteID: 3ae79387338fee14eb593cf5b519cdd8
+      internalID: -1356511671
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wiresfrfr_1
+      name: Passport cover_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 85
-        width: 85
-        height: 20
+        x: 113
+        y: 0
+        width: 217
+        height: 162
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 19, y: 0, z: 19, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8499f44fabd240546ad9e81fe098c140
-      internalID: 466044882
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wiresfrfr_2
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 53
-        width: 85
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 19, y: 0, z: 19, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fb1083bcc0a22fb49b9b2b4acfa6f35c
-      internalID: -479456642
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wiresfrfr_3
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 21
-        width: 85
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 19, y: 0, z: 19, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 34410f311e4afa644a1fb8746af2bc8e
-      internalID: 1415638084
+      spriteID: 26b81238f3e75e546bf1e32b1381214e
+      internalID: -510162054
       vertices: []
       indices: 
       edges: []
@@ -217,10 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wiresfrfr_0: 532582549
-      wiresfrfr_1: 466044882
-      wiresfrfr_2: -479456642
-      wiresfrfr_3: 1415638084
+      Passport cover_0: -1356511671
+      Passport cover_1: -510162054
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

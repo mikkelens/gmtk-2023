@@ -12,15 +12,8 @@ public class WireButtonLeft : MonoBehaviour
     [SerializeField] private StretchWireScript wireScript;
     [SerializeField] WireButtonLeft button2, button3, button4;
     
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
 	    Vector2 target;
 	    Vector2 source = transform.position;

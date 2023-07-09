@@ -46,7 +46,7 @@ namespace Core
                     allLevelScenes.AddRange(level.PreparationSegments.Select(x => x.SegmentScene));
                     allLevelScenes.AddRange(level.ActionSegments.Select(x => x.SegmentScene));
                     allLevelScenes.AddRange(level.ActionSegments.Select(x => x.FailScene));
-                    allLevelScenes.AddRange(level.Ending);
+                    allLevelScenes.Add(level.Ending);
                 }
                 allLevelScenes.RemoveAll(x => x.ScenePath == string.Empty);
 
@@ -114,6 +114,13 @@ namespace Core
 
         private void Start()
         {
+            BombData = new BombData(new []
+            {
+                Random.Range(0, 10).ToString()[0],
+                Random.Range(0, 10).ToString()[0],
+                Random.Range(0, 10).ToString()[0],
+                Random.Range(0, 10).ToString()[0]
+            });
             _remainingLevels = new List<Level>(levels);
             _uiManager = GetUIInfallible();
             #if UNITY_EDITOR

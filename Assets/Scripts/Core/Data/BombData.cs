@@ -3,8 +3,17 @@
 namespace Core.Data
 {
 	[SuppressMessage("ReSharper", "InconsistentNaming")]
-	public struct BombData
+	public class BombData
 	{
-		public int PIN; // please make this a 4 digit number <3
+		public BombData(char[] pin)
+		{
+			PIN = pin; // please make this a 4 digit number <3
+		}
+		// generated at game startup
+		public readonly char[] PIN;
+
+		// generated at bomb cooking
+		public int mixingOffness;
+		public int incorrectWireNumber;
 	}
 }

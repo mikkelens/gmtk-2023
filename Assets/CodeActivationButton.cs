@@ -1,23 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using Core;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class CodeActivationButton : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	[SerializeField, Required] private CodeScript codeScript;
 
     public void Pressed()
     {
-       
+	    if (PersistentGameManager.Instance.BombData.PIN == codeScript.code.ToCharArray())
+	    {
+		    PersistentGameManager.Instance.NextSegment();
+	    }
+	    else
+	    {
+		    PersistentGameManager.Instance.SegmentFailure();
+	    }
     }
 }

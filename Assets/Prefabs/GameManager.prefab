@@ -74,6 +74,9 @@ MonoBehaviour:
   smoothLoadTime: 0.4
   uiPrefab: {fileID: 1388194326226555456, guid: 92928645e1717bf4182046ddd883c510, type: 3}
   soundtrackPrefab: {fileID: 183120525782303066, guid: 451b69826124a7841940d7bcec16a65c, type: 3}
+  mainMenu:
+    sceneAsset: {fileID: 102900000, guid: 72a6317c2bf9b2944834319a96beb097, type: 3}
+    scenePath: Assets/Scenes/MainMenu.unity
   sceneType: 1
   gameHub:
     sceneAsset: {fileID: 102900000, guid: f084df28f1c9861428e7e223ef2d2fe7, type: 3}

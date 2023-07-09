@@ -8,7 +8,7 @@ public class ProceedScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.transform.localPosition = new Vector2(Random.Range(-850, 851), Random.Range(-450, 451));
+        gameObject.transform.localPosition = new Vector2(Random.Range(-350, 351), Random.Range(-200, 201));
     }
 
     // Update is called once per frame

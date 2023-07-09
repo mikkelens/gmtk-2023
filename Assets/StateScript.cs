@@ -33,9 +33,12 @@ public class StateScript : MonoBehaviour
                 {
                     PersistentGameManager.Instance.SusMeter += 2;
                     StartCoroutine(CoolDown());
-
                 }
             }
+        }
+        else
+        {
+            PersistentGameManager.Instance.NextSegment();
         }
     }
 

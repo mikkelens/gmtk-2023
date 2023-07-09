@@ -26,7 +26,7 @@ public class ProceedScript : MonoBehaviour
     {
         PersistentGameManager.Instance.SusMeter += ((int)susToAdd);
         stateMachine = GameObject.FindWithTag("StateMachine").GetComponent<StateScript>();
-        stateMachine.proceedState = false;
+        stateMachine.proceedState = true;
         stateMachine.waits += 1;
         Destroy(gameObject);
     }

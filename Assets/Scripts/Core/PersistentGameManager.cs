@@ -38,8 +38,8 @@ namespace Core
             {
                 allLevelScenes = new List<SceneReference>
                 {
+                    mainMenu,
                     gameHub,
-                    mainMenu
                 };
                 foreach (Level level in levels)
                 {

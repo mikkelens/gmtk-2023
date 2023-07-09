@@ -114,6 +114,13 @@ namespace Core
 
         private void Start()
         {
+            BombData = new BombData(new []
+            {
+                Random.Range(0, 10).ToString()[0],
+                Random.Range(0, 10).ToString()[0],
+                Random.Range(0, 10).ToString()[0],
+                Random.Range(0, 10).ToString()[0]
+            });
             _remainingLevels = new List<Level>(levels);
             _uiManager = GetUIInfallible();
             #if UNITY_EDITOR

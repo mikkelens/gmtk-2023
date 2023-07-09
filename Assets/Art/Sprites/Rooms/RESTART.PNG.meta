@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 99b806212114be946b6fdfaa27887f25
+guid: 3559d962046f4f24ba5f9b397785146d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1000
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 16384
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: 4
     textureCompression: 0
@@ -123,337 +123,232 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TitleScreen Sprite sheet_0
+      name: AstronautWalk_01
       rect:
         serializedVersion: 2
-        x: 23
-        y: 776
-        width: 473
-        height: 196
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8ab9a8d77683bd941a4a27f970323f8e
-      internalID: 1343559453
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TitleScreen Sprite sheet_1
-      rect:
-        serializedVersion: 2
-        x: 509
-        y: 251
-        width: 1282
-        height: 721
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 004be201b7007e74daaf99ca961f3d00
-      internalID: 1052480131
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TitleScreen Sprite sheet_2
-      rect:
-        serializedVersion: 2
-        x: 26
-        y: 710
-        width: 80
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 69f5988e5863ca24a84090f07e2f3a68
-      internalID: -957213898
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TitleScreen Sprite sheet_3
-      rect:
-        serializedVersion: 2
-        x: 41
-        y: 678
-        width: 160
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 58c3b2e67890b7b4485e2a940d46179f
-      internalID: -345309742
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TitleScreen Sprite sheet_4
-      rect:
-        serializedVersion: 2
-        x: 53
-        y: 644
-        width: 250
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bca0d9a82410d4149a6b863eaaf76393
-      internalID: -727810390
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TitleScreen Sprite sheet_5
-      rect:
-        serializedVersion: 2
-        x: 41
-        y: 560
-        width: 79
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 05df93462e6a9124080190ff622f8137
-      internalID: -1345876636
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TitleScreen Sprite sheet_6
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 528
-        width: 161
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 677fcf169dc55514e84ff44b16f33f6a
-      internalID: 701986704
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TitleScreen Sprite sheet_7
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 494
-        width: 250
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2deb17b1a79d1b24a946677d1072901b
-      internalID: 1330688131
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TitleScreen Sprite sheet_8
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 11
-        width: 284
-        height: 225
+        x: 5
+        y: 224
+        width: 17
+        height: 32
       alignment: 9
-      pivot: {x: 0.9944426, y: 0.00508998}
+      pivot: {x: 0.54745257, y: -0.0021009445}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 906aaaa967c57c1468fd1bc12ea9d132
-      internalID: 693347407
+      spriteID: ee8003976c0f66743994ddb63fc2744d
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TitleScreen Sprite sheet_9
+      name: AstronautWalk_02
       rect:
         serializedVersion: 2
-        x: 345
-        y: 11
-        width: 284
-        height: 227
+        x: 38
+        y: 224
+        width: 16
+        height: 32
       alignment: 9
-      pivot: {x: 0.993757, y: 0.010436398}
+      pivot: {x: 0.52520895, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c4f35f0a8f603c42b68681c5c9bbc61
-      internalID: 1654280520
+      spriteID: 96331e7fcccfd3d4cbe925fa50d2b221
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TitleScreen Sprite sheet_10
+      name: AstronautWalk_03
       rect:
         serializedVersion: 2
-        x: 657
-        y: 11
-        width: 284
-        height: 229
+        x: 71
+        y: 224
+        width: 15
+        height: 32
       alignment: 9
-      pivot: {x: 0.99490184, y: 0.01101159}
+      pivot: {x: 0.508963, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a42f742a4143d5548afffae1c80f6a2a
-      internalID: -1594629518
+      spriteID: 1ff6d78b27c27e949a0ad9216b529164
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TitleScreen Sprite sheet_11
+      name: AstronautWalk_04
       rect:
         serializedVersion: 2
-        x: 969
-        y: 11
-        width: 284
-        height: 227
-      alignment: 9
-      pivot: {x: 0.99351865, y: 0.00524223}
+        x: 103
+        y: 224
+        width: 15
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d1596a7218aaae4493b76e19ab2df87
-      internalID: -1833636926
+      spriteID: 33427e50e2b984140b53ced1d0931408
+      internalID: 21300006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TitleScreen Sprite sheet_12
+      name: AstronautWalk_05
       rect:
         serializedVersion: 2
-        x: 1281
-        y: 11
-        width: 284
-        height: 225
-      alignment: 9
-      pivot: {x: 0.993483, y: 0.0025721316}
+        x: 7
+        y: 191
+        width: 15
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d69992387bfc943409add470408949b9
-      internalID: 2053001402
+      spriteID: e3c176ae2c1189f4fa58098deb1606a3
+      internalID: 21300008
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TitleScreen Sprite sheet_13
+      name: AstronautWalk_06
       rect:
         serializedVersion: 2
-        x: 1593
-        y: 11
-        width: 284
-        height: 227
+        x: 38
+        y: 191
+        width: 16
+        height: 32
       alignment: 9
-      pivot: {x: 0.99512404, y: 0.0065756766}
+      pivot: {x: 0.52941036, y: 0.0021004677}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7549aa840207b1348b256c969f5edd0d
-      internalID: -1939195022
+      spriteID: d5345b3c8bbea634fb24b59a1563d5ed
+      internalID: 21300010
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TitleScreen Sprite sheet_14
+      name: AstronautIdle
       rect:
         serializedVersion: 2
-        x: 1905
-        y: 11
-        width: 284
-        height: 229
+        x: 6
+        y: 140
+        width: 15
+        height: 32
       alignment: 9
-      pivot: {x: 0.99716485, y: 0.0067431103}
+      pivot: {x: 0.5196411, y: 0.0013155937}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aafb2c851f83c474e9f13910c24f3bec
-      internalID: -2115210055
+      spriteID: f4a4da522c0a1dc46891a49f527a4ad2
+      internalID: 21300014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TitleScreen Sprite sheet_15
+      name: AstronautJump
       rect:
         serializedVersion: 2
-        x: 2217
-        y: 11
-        width: 284
-        height: 227
+        x: 30
+        y: 140
+        width: 17
+        height: 31
       alignment: 9
-      pivot: {x: 0.99574304, y: 0.00881487}
+      pivot: {x: 0.5149484, y: 0.0016395815}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac396c79c82aaf74e8fd37ef4088f118
-      internalID: 1408824988
+      spriteID: 81640a2191f29254195c38d71a36bfb2
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AstronautArm
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 153
+        width: 12
+        height: 5
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cbbad4cfa32d524588159f552113399
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AstronautBigGun
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 155
+        width: 24
+        height: 9
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 064df71b5e374f449b6b10276df8191d
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AstronautPistol
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 149
+        width: 5
+        height: 4
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f1ad5cced2c5e04e900ab199535e945
+      internalID: 21300022
       vertices: []
       indices: 
       edges: []
@@ -469,22 +364,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TitleScreen Sprite sheet_0: 1343559453
-      TitleScreen Sprite sheet_1: 1052480131
-      TitleScreen Sprite sheet_10: -1594629518
-      TitleScreen Sprite sheet_11: -1833636926
-      TitleScreen Sprite sheet_12: 2053001402
-      TitleScreen Sprite sheet_13: -1939195022
-      TitleScreen Sprite sheet_14: -2115210055
-      TitleScreen Sprite sheet_15: 1408824988
-      TitleScreen Sprite sheet_2: -957213898
-      TitleScreen Sprite sheet_3: -345309742
-      TitleScreen Sprite sheet_4: -727810390
-      TitleScreen Sprite sheet_5: -1345876636
-      TitleScreen Sprite sheet_6: 701986704
-      TitleScreen Sprite sheet_7: 1330688131
-      TitleScreen Sprite sheet_8: 693347407
-      TitleScreen Sprite sheet_9: 1654280520
+      AstronautArm: 21300018
+      AstronautBigGun: 21300020
+      AstronautIdle: 21300014
+      AstronautJump: 21300016
+      AstronautPistol: 21300022
+      AstronautWalk_01: 21300000
+      AstronautWalk_02: 21300002
+      AstronautWalk_03: 21300004
+      AstronautWalk_04: 21300006
+      AstronautWalk_05: 21300008
+      AstronautWalk_06: 21300010
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

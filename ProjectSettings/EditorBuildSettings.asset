@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/Game/GameDressUp.unity
-    guid: 0a5291cceedbf804b8a8e273ad4e67f4
-  - enabled: 1
     path: Assets/Scenes/Game/GameQueueSim.unity
     guid: 1982d6360314105418584cfe13c3b3c9
   - enabled: 1
@@ -20,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game/GameHub.unity
     guid: f084df28f1c9861428e7e223ef2d2fe7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game/GameDressUp.unity
     guid: 0a5291cceedbf804b8a8e273ad4e67f4
   - enabled: 1
@@ -62,7 +59,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game/GameEnterCode.unity
     guid: 623447042068d3d4da46f0a67274443e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game/Ending.unity
     guid: 0dd95496a6f00c1489ce6c5d10612d9d
   - enabled: 1
@@ -86,7 +83,28 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game/GameEnterCode.unity
     guid: 623447042068d3d4da46f0a67274443e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game/Ending.unity
     guid: 0dd95496a6f00c1489ce6c5d10612d9d
+  - enabled: 1
+    path: Assets/Scenes/Game/GameHub.unity
+    guid: f084df28f1c9861428e7e223ef2d2fe7
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 72a6317c2bf9b2944834319a96beb097
+  - enabled: 1
+    path: Assets/Scenes/Game/GameIDmaker.unity
+    guid: 6aa09ebd3286a4d43b3525b02251fa52
+  - enabled: 1
+    path: Assets/Scenes/Game/GameBombCook.unity
+    guid: db20a8738c0bac24e8299617533997b0
+  - enabled: 1
+    path: Assets/Scenes/Game/GameQueueSim.unity
+    guid: 1982d6360314105418584cfe13c3b3c9
+  - enabled: 1
+    path: Assets/Scenes/Game/GameDialogueCheck.unity
+    guid: 2cbdc381334bb7a4aa81e7b3c34b5039
+  - enabled: 1
+    path: Assets/Scenes/Game/GameWin.unity
+    guid: 27f58b89ded1f0c438d10d96e4aad82e
   m_configObjects: {}

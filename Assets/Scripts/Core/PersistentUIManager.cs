@@ -12,7 +12,8 @@ namespace Core
 
 		public void SetTransitionImageWithT(float t)
 		{
-			loadFadeImage.color = Color.black.WithAlpha(loadFadeCurve.Evaluate(t));
+			Color color = new Color(0f, 0f, 0f, loadFadeCurve.Evaluate(t));
+			loadFadeImage.color = color;
 		}
 	}
 }

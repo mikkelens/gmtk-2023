@@ -72,8 +72,8 @@ namespace Core
             EditorBuildSettings.scenes = buildScenes.ToArray();
         }
         [VerticalGroup(LevelGroupID)]
-        #endif
         [ValidateInput(nameof(ListIsRepresentedInBuildSettings), "Build settings is missing some of these scenes!", ContinuousValidationCheck = true)]
+        #endif
         [ValidateInput(nameof(ValidateListNonEmpty), "No levels assigned!", InfoMessageType.Warning)]
         [SerializeField] private List<Level> levels;
         #endregion
@@ -121,6 +121,7 @@ namespace Core
             {
                 StartCoroutine(WaitThenFadeUp());
             }
+            #endif
         }
 
         private void ResetState()
@@ -150,7 +151,6 @@ namespace Core
         {
             yield return FadeToBlack(0.08f);
             yield return FadeFromBlack(smoothLoadTime);
-            #endif
         }
 
         public void ReturnToHub()

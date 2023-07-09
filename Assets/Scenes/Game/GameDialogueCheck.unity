@@ -319,15 +319,15 @@ MonoBehaviour:
   passportAnim: {fileID: 259001166}
   guardText: {fileID: 908871022}
   guard: {fileID: 1875320086}
-  passportMistakeSusIncrease: 10
-  guardSusAmount: 20
+  passportMistakeSusIncrease: 4
+  guardSusAmount: 25
   guardMegaSusAmount: 50
   detectionString: '!'
   undetectedString: Alright, carry on.
   dialogueButtonParent: {fileID: 1016120173}
   dialogueOptionButtonPrefab: {fileID: 9126510013465951061, guid: 08111a7a4e9fdda45be488fb028ba0cc, type: 3}
   pauseAfterMessage: 0.4
-  susDetectedDelay: 0.85
+  susDetectedDelay: 0.75
   endDelay: 2.75
 --- !u!4 &397943236
 Transform:

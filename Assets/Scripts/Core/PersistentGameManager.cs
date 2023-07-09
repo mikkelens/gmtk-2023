@@ -210,13 +210,18 @@ namespace Core
             _currentSegment = _currentLevel.remainingSegments.FirstOrDefault();
             if (_currentSegment == null)
             {
-                Debug.Log("No next segment, returning to hub.");
-                ReturnToHub();
+                Debug.Log("No next segment, player has won.");
+                GoToEnding();
                 return;
             }
 
             _currentLevel.remainingSegments.Remove(_currentSegment);
             StartCoroutine(SmoothLoad(_currentSegment.SegmentScene));
+        }
+
+        private void GoToEnding()
+        {
+            StartCoroutine(SmoothLoad(_currentLevel.Ending));
         }
 
         public void SegmentFailure() // assume this would only be called where it makes sense

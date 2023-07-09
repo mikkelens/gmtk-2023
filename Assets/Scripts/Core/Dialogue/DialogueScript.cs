@@ -266,7 +266,7 @@ namespace Core.Dialogue
 			AddSus(-100);
 			yield return StartCoroutine(guardText.AnimateTextReplace(undetectedString));
 			yield return new WaitForSeconds(endDelay);
-			PersistentGameManager.Instance.NextSegment();
+			PersistentGameManager.Instance.;
 		}
 
 	}

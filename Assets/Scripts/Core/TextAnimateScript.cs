@@ -28,12 +28,15 @@ namespace Core
         public bool Animating { get; private set; }
         public IEnumerator AnimateTextReplace(string text)
         {
-            Debug.Log($"Writing text... {this}", this);
+            Debug.Log($"Replacing '{textComponent.text}'...");
             ClearText();
             yield return AnimateTextAdd(text);
         }
         public IEnumerator AnimateTextAdd(string text)
         {
+            Debug.Log($"Writing text '{text}' to [{this}]", this);
+            if (string.IsNullOrEmpty(text)) yield break;
+
             Animating = true;
             float letterDelay = 1f / animateSpeed;
             foreach (char character in text)
@@ -41,7 +44,6 @@ namespace Core
                 yield return new WaitForSeconds(letterDelay);
                 textComponent.text += character;
             }
-
             Animating = false;
         }
         public void ClearText()

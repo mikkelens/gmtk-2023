@@ -12,18 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a43db74ba75411a81c0580a04ff36ab, type: 3}
   m_Name: Greeting Decision
   m_EditorClassIdentifier: 
-  <Option1>k__BackingField:
-    <Content>k__BackingField: Good morning!
-    <Response>k__BackingField:
-      <Reply>k__BackingField: Sure hope not.
-      <SusAmount>k__BackingField: 10
-  <Option2>k__BackingField:
-    <Content>k__BackingField: Evening
-    <Response>k__BackingField:
-      <Reply>k__BackingField: Feels like it.
-      <SusAmount>k__BackingField: 0
-  <Option3>k__BackingField:
-    <Content>k__BackingField: Let's get it over with..
-    <Response>k__BackingField:
-      <Reply>k__BackingField: I suppose.
-      <SusAmount>k__BackingField: 5
+  <Prompt>k__BackingField: ...
+  <Options>k__BackingField:
+  - <Reply>k__BackingField: Good morning!
+    <Response>k__BackingField: Sure hope not.
+    <SusAmount>k__BackingField: 5
+  - <Reply>k__BackingField: Let's get this over with
+    <Response>k__BackingField: Mhm.
+    <SusAmount>k__BackingField: 3
+  - <Reply>k__BackingField: Evening
+    <Response>k__BackingField: Glad we can agree.
+    <SusAmount>k__BackingField: 0

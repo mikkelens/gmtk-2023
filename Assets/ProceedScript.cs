@@ -4,6 +4,7 @@ using Core;
 public class ProceedScript : MonoBehaviour
 {
     public float susToAdd;
+    StateScript stateMachine;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,9 @@ public class ProceedScript : MonoBehaviour
     public void Pressed()
     {
         PersistentGameManager.Instance.SusMeter += ((int)susToAdd);
+        stateMachine = GameObject.FindWithTag("StateMachine").GetComponent<StateScript>();
+        stateMachine.proceedState = true;
+        stateMachine.waits += 1;
         Destroy(gameObject);
     }
 }

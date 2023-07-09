@@ -2823,6 +2823,12 @@ MonoBehaviour:
   button2: {fileID: 782140220}
   button3: {fileID: 325862953}
   button4: {fileID: 118001066}
+  mixingSlider1: {fileID: 2013935362}
+  mixingSlider2: {fileID: 1088215649}
+  button1Right: {fileID: 1443246674}
+  button2Right: {fileID: 215728131}
+  button3Right: {fileID: 1341998631}
+  button4Right: {fileID: 1053903515}
 --- !u!1 &1566444768 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 461522075854889677, guid: 9be7dca06c6d3fc47892a474fbda3f0e, type: 3}

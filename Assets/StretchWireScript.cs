@@ -13,6 +13,6 @@ public class StretchWireScript : MonoBehaviour
 		myTransform.localRotation = rotation;
 
 		RectTransform myRectTransform = myTransform.GetComponent<RectTransform>();
-		myRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, destinationVector.magnitude);
+		myRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, destinationVector.magnitude / transform.localScale.x);
 	}
 }

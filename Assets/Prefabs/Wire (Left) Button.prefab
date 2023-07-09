@@ -28,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 2748594597173494049}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8769820969893758232}
@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 276.8, y: 100}
+  m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &7604787425508764638
 CanvasRenderer:
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5177388603050735206, guid: 0bf79e4e39498e64eb6428dda0591008, type: 3}
+  m_Sprite: {fileID: -479456642, guid: be5a70f4b2e1bf94b8d42bd67f110ef0, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 1.25
 --- !u!114 &6234230272989379884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,7 +99,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 461522075854889677, guid: 9be7dca06c6d3fc47892a474fbda3f0e, type: 3}
       propertyPath: m_Name
-      value: WireLeft1 Variant
+      value: Wire (Left) Button
       objectReference: {fileID: 0}
     - target: {fileID: 461522075854889677, guid: 9be7dca06c6d3fc47892a474fbda3f0e, type: 3}
       propertyPath: m_IsActive
@@ -321,7 +321,6 @@ MonoBehaviour:
   placed: 0
   placeTarget: {fileID: 0}
   contraire: {fileID: 0}
-  cursor: {fileID: 0}
   wire: {fileID: 2748594597173494049}
   wireScript: {fileID: 6234230272989379884}
   button2: {fileID: 0}

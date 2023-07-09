@@ -18,7 +18,7 @@ namespace Core
         {
             if (animateFilledTextAtStartup)
             {
-                StartCoroutine(AnimateText(textComponent.text));
+                StartCoroutine(AnimateTextReplace(textComponent.text));
             }
             else if (removeTextAtStartup)
             {
@@ -26,16 +26,22 @@ namespace Core
             }
         }
         public bool Animating { get; private set; }
-        public IEnumerator AnimateText(string text)
+        public IEnumerator AnimateTextReplace(string text)
+        {
+            Debug.Log($"Writing text... {this}", this);
+            ClearText();
+            yield return AnimateTextAdd(text);
+        }
+        public IEnumerator AnimateTextAdd(string text)
         {
             Animating = true;
-            ClearText();
             float letterDelay = 1f / animateSpeed;
             foreach (char character in text)
             {
                 yield return new WaitForSeconds(letterDelay);
                 textComponent.text += character;
             }
+
             Animating = false;
         }
         public void ClearText()

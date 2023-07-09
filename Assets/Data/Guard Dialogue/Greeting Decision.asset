@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a43db74ba75411a81c0580a04ff36ab, type: 3}
+  m_Name: Greeting Decision
+  m_EditorClassIdentifier: 
+  <Option1>k__BackingField:
+    <Content>k__BackingField: Good morning!
+    <Response>k__BackingField:
+      <Reply>k__BackingField: Sure hope not.
+      <SusAmount>k__BackingField: 10
+  <Option2>k__BackingField:
+    <Content>k__BackingField: Evening
+    <Response>k__BackingField:
+      <Reply>k__BackingField: Feels like it.
+      <SusAmount>k__BackingField: 0
+  <Option3>k__BackingField:
+    <Content>k__BackingField: Let's get it over with..
+    <Response>k__BackingField:
+      <Reply>k__BackingField: I suppose.
+      <SusAmount>k__BackingField: 5

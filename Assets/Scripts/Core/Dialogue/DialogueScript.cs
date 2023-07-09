@@ -227,6 +227,7 @@ namespace Core.Dialogue
 					yield break;
 				}
 			}
+			yield return new WaitForSeconds(pauseAfterMessage * 1.5f);
 			GoNextCheck();
 		}
 

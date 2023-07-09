@@ -17,6 +17,7 @@ namespace Core.Dialogue
 		private DialogueCheck _currentCheck;
 
 		[Header("Guard")]
+		[SerializeField, Required] private Animator passportAnim;
 		[SerializeField, Required] private TextAnimateScript guardText;
 		[SerializeField, Required] private AnimatedGuardScript guard;
 		[SerializeField] private int passportMistakeSusIncrease = 8;
@@ -34,6 +35,7 @@ namespace Core.Dialogue
 		[SerializeField] private float pauseAfterMessage = 0.3f;
 		[SerializeField] private float susDetectedDelay = 1f;
 		[SerializeField] private float endDelay = 2.5f;
+		private static readonly int giveTrigger = Animator.StringToHash("GiveTrigger");
 
 		private void Start()
 		{
@@ -69,7 +71,7 @@ namespace Core.Dialogue
 			}
 			else if (_currentCheck is Prompt passportCheck)
 			{
-				StartCoroutine(PromptCheck(passportCheck));
+				StartCoroutine(PassportPromptCheck(passportCheck));
 			}
 		}
 
@@ -168,7 +170,7 @@ namespace Core.Dialogue
 
 		#region Passport check
 		private bool HasAnsweredPrompt { get; set; } // set externally
-		private IEnumerator PromptCheck(Prompt prompt)
+		private IEnumerator PassportPromptCheck(Prompt prompt)
 		{
 			DestroyButtons();
 			Button promptButton = Instantiate(dialogueOptionButtonPrefab, dialogueButtonParent);
@@ -188,6 +190,11 @@ namespace Core.Dialogue
 			HasAnsweredPrompt = false;
 			SetButtonsInteractable(false);
 
+			passportAnim.SetTrigger(giveTrigger);
+			float length = passportAnim.GetNextAnimatorStateInfo(0).length;
+			yield return new WaitForSeconds(length);
+			yield return new WaitForSeconds(pauseAfterMessage);
+
 			// calculate sus
 			int susIncrease = 0;
 			Passport passport = PersistentGameManager.Instance.Passport;
@@ -202,6 +209,7 @@ namespace Core.Dialogue
 				yield return new WaitForSeconds(susDetectedDelay);
 			}
 			SetButtonsActive(false);
+			passportAnim.gameObject.SetActive(false);
 			yield return AddSusAndContinue(susIncrease);
 		}
 		#endregion

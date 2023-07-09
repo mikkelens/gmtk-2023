@@ -184,6 +184,104 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+--- !u!1 &259001162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 259001163}
+  - component: {fileID: 259001166}
+  - component: {fileID: 259001165}
+  - component: {fileID: 259001164}
+  m_Layer: 0
+  m_Name: PassportGiveAnim
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &259001163
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259001162}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -4824}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1147637112}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 152, y: -394}
+  m_SizeDelta: {x: 75, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &259001164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259001162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.6792453, g: 0.6792453, b: 0.6183695, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -1356511671, guid: 4a54f15f51147a04d995bebc938a332e, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &259001165
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259001162}
+  m_CullTransparentMesh: 1
+--- !u!95 &259001166
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259001162}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7ab8baaf539029842bc2f8ec11976655, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &397943234
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,18 +316,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 683617ec81a87ad4c992a8c881a7c008, type: 2}
   - {fileID: 11400000, guid: 273fc66e1f0e6104a85f3c6d94736004, type: 2}
   - {fileID: 11400000, guid: 3cacc28b4bea8bb478310daf510dbb3b, type: 2}
+  passportAnim: {fileID: 259001166}
   guardText: {fileID: 908871022}
   guard: {fileID: 1875320086}
-  passportMistakeSusIncrease: 0
+  passportMistakeSusIncrease: 10
   guardSusAmount: 20
   guardMegaSusAmount: 50
   detectionString: '!'
   undetectedString: Alright, carry on.
   dialogueButtonParent: {fileID: 1016120173}
   dialogueOptionButtonPrefab: {fileID: 9126510013465951061, guid: 08111a7a4e9fdda45be488fb028ba0cc, type: 3}
-  pauseAfterMessage: 0.75
-  susDetectedDelay: 1
-  endDelay: 3
+  pauseAfterMessage: 0.4
+  susDetectedDelay: 0.85
+  endDelay: 2.75
 --- !u!4 &397943236
 Transform:
   m_ObjectHideFlags: 0
@@ -896,6 +995,7 @@ RectTransform:
   m_Children:
   - {fileID: 2122585212}
   - {fileID: 1469873437}
+  - {fileID: 259001163}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1014,8 +1114,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -173.45001}
-  m_SizeDelta: {x: 401.57, y: 177.08}
+  m_AnchoredPosition: {x: 0, y: -175.46}
+  m_SizeDelta: {x: 501.47, y: 208.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1469873438
 MonoBehaviour:

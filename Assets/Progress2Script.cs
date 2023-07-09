@@ -34,7 +34,7 @@ public class Progress2Script : MonoBehaviour
     public void Pressed()
     {
         SaveBombData();
-        PersistentGameManager.Instance.ReturnToHub();
+        PersistentGameManager.Instance.NextSegment();
     }
 
     public void SaveBombData()

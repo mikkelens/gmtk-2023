@@ -4,7 +4,6 @@ using System.Linq;
 using Core.Data;
 using Sirenix.OdinInspector;
 using Tools.Types;
-using Tools.Utils;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -26,6 +25,7 @@ namespace Core
         [SerializeField, Required, AssetsOnly] private PersistentUIManager uiPrefab;
 
         [Header("Levels and Scenes")]
+        [SerializeField] private SceneType sceneType;
         [SerializeField, Required] private SceneReference gameHub;
         [SerializeField, Required] private SceneReference gameOver;
 
@@ -46,7 +46,7 @@ namespace Core
                     allLevelScenes.AddRange(level.PreparationSegments.Select(x => x.SegmentScene));
                     allLevelScenes.AddRange(level.ActionSegments.Select(x => x.SegmentScene));
                     allLevelScenes.AddRange(level.ActionSegments.Select(x => x.FailScene));
-                    allLevelScenes.AddRange(level.Ending);
+                    allLevelScenes.Add(level.Ending);
                 }
                 allLevelScenes.RemoveAll(x => x.ScenePath == string.Empty);
 
@@ -102,31 +102,50 @@ namespace Core
         #endif
 
         private bool _loading;
-        private SceneType _sceneType;
         private enum SceneType
         {
             Hub,
             LevelSegment
         }
         private List<Level> _remainingLevels;
+        public List<Level> RemainingLevelsCopy => new List<Level>(_remainingLevels);
         private Level _currentLevel;
         private Level.Segment _currentSegment;
 
         private void Start()
         {
+            BombData = new BombData(new []
+            {
+                Random.Range(0, 10).ToString()[0],
+                Random.Range(0, 10).ToString()[0],
+                Random.Range(0, 10).ToString()[0],
+                Random.Range(0, 10).ToString()[0]
+            });
             _remainingLevels = new List<Level>(levels);
             _uiManager = GetUIInfallible();
+            #if UNITY_EDITOR
+            if (!_loading)
+            {
+                StartCoroutine(WaitThenFadeUp());
+            }
+        }
+        private IEnumerator WaitThenFadeUp() // only used when starting playmode
+        {
+            yield return FadeToBlack(0.08f);
+            yield return FadeFromBlack(smoothLoadTime);
+            #endif
         }
 
         public void ReturnToHub()
         {
-            if (_loading || _sceneType == SceneType.Hub) return;
+            if (_loading || sceneType == SceneType.Hub) return;
+            sceneType = SceneType.Hub;
             StartCoroutine(SmoothLoad(gameHub));
         }
 
         public void StartNewLevel()
         {
-            if (_loading || _sceneType == SceneType.LevelSegment) return;
+            if (_loading || sceneType == SceneType.LevelSegment) return;
 
             _currentLevel = _remainingLevels.FirstOrDefault();
             if (_currentLevel == null)
@@ -136,6 +155,7 @@ namespace Core
             }
 
             _currentLevel.remainingSegments = new List<Level.Segment>(_currentLevel.PreparationSegments);
+            _currentLevel.remainingSegments.AddRange(_currentLevel.ActionSegments); // flow directly
 
             _currentSegment = _currentLevel.remainingSegments.FirstOrDefault();
             if (_currentSegment == null)
@@ -144,6 +164,8 @@ namespace Core
                 return;
             }
 
+            sceneType = SceneType.LevelSegment;
+
             _remainingLevels.Remove(_currentLevel);
             _currentLevel.remainingSegments.Remove(_currentSegment);
             StartCoroutine(SmoothLoad(_currentSegment.SegmentScene));
@@ -151,11 +173,12 @@ namespace Core
 
         public void NextSegment()
         {
-            if (_loading || _sceneType == SceneType.Hub) return;
+            if (_loading || sceneType == SceneType.Hub) return;
 
             if (_currentLevel == null)
             {
-                Debug.LogError("Current level is null!");
+                Debug.LogWarning("Current level is null!");
+                ReturnToHub();
                 return;
             }
 
@@ -173,7 +196,9 @@ namespace Core
 
         public void SegmentFailure() // assume this would only be called where it makes sense
         {
-            if (_loading || _sceneType == SceneType.Hub) return;
+            if (_loading || sceneType == SceneType.Hub) return;
+
+            Debug.Log("SUS SPOTTED");
 
             if (_currentSegment is not Level.ActionSegment actionSegment)
             {
@@ -197,31 +222,42 @@ namespace Core
         {
             _loading = true;
 
-            float t;
-            // fade to black
-            float transitionStartTime = Time.time;
-            do
-            {
-                yield return new WaitForSeconds(Time.deltaTime);
-                t = transitionStartTime.TimeSince() / smoothLoadTime;
-                _uiManager.SetTransitionImageWithT(t);
-            } while (t <= 1f);
+            yield return FadeToBlack(smoothLoadTime);
 
             SceneManager.LoadScene(scene.ScenePath);
 
-            // fade from black
-            transitionStartTime = Time.time;
-            do
-            {
-                yield return new WaitForSeconds(Time.deltaTime);
-                t = transitionStartTime.TimeSince() / smoothLoadTime;
-                _uiManager.SetTransitionImageWithT(1f - t);
-            } while (t <= 1f);
+            yield return FadeFromBlack(smoothLoadTime);
 
             _loading = false;
         }
+        private IEnumerator FadeToBlack(float fadeTime)
+        {
+            float time = 0;
+            float t;
+            do
+            {
+                yield return new WaitForSeconds(Time.deltaTime);
+                time += Time.deltaTime;
+                t = time / fadeTime;
+                _uiManager.SetTransitionImageWithT(t);
+            } while (t <= 1f);
+        }
+        private IEnumerator FadeFromBlack(float fadeTime)
+        {
+            float time = 0;
+            float t;
+            do
+            {
+                yield return new WaitForSeconds(Time.deltaTime);
+                time += Time.deltaTime;
+                t = time / fadeTime;
+                _uiManager.SetTransitionImageWithT(1f - t);
+            } while (t <= 1f);
+        }
 
-        public PassportData PassportData { get; set; }
+        public int SusMeter { get ; set ; }
+
+        public Passport Passport { get; set; }
         public BombData BombData { get; set; }
 
         private PersistentUIManager GetUIInfallible()

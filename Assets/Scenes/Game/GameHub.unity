@@ -589,7 +589,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1044983086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1098,7 +1098,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
       propertyPath: allLevelScenes.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
       propertyPath: prevLevelsList.Array.size
@@ -1122,7 +1122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
       propertyPath: allLevelScenes.Array.data[1].scenePath
-      value: Assets/Scenes/Game/GameDressUp.unity
+      value: Assets/Scenes/Game/GameIDmaker.unity
       objectReference: {fileID: 0}
     - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
       propertyPath: allLevelScenes.Array.data[2].scenePath
@@ -1137,13 +1137,17 @@ PrefabInstance:
       value: Assets/Scenes/Game/GameDialogueCheck.unity
       objectReference: {fileID: 0}
     - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: allLevelScenes.Array.data[5].scenePath
+      value: Assets/Scenes/Game/Ending.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
       propertyPath: allLevelScenes.Array.data[0].sceneAsset
       value: 
       objectReference: {fileID: 102900000, guid: f084df28f1c9861428e7e223ef2d2fe7, type: 3}
     - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
       propertyPath: allLevelScenes.Array.data[1].sceneAsset
       value: 
-      objectReference: {fileID: 102900000, guid: 0a5291cceedbf804b8a8e273ad4e67f4, type: 3}
+      objectReference: {fileID: 102900000, guid: 6aa09ebd3286a4d43b3525b02251fa52, type: 3}
     - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
       propertyPath: allLevelScenes.Array.data[2].sceneAsset
       value: 
@@ -1156,6 +1160,10 @@ PrefabInstance:
       propertyPath: allLevelScenes.Array.data[4].sceneAsset
       value: 
       objectReference: {fileID: 102900000, guid: 2cbdc381334bb7a4aa81e7b3c34b5039, type: 3}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: allLevelScenes.Array.data[5].sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 0dd95496a6f00c1489ce6c5d10612d9d, type: 3}
     - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
       propertyPath: levels.Array.data[1].<Name>k__BackingField
       value: EVADE TAXES

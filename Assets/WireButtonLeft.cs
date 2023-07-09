@@ -7,7 +7,7 @@ public class WireButtonLeft : MonoBehaviour
     public bool placed;
     public Transform placeTarget;
     [SerializeField] GameObject contraire;
-    [SerializeField] GameObject cursor;
+    // [SerializeField] GameObject cursor;
     [SerializeField] GameObject wire;
     [SerializeField] private StretchWireScript wireScript;
     [SerializeField] WireButtonLeft button2, button3, button4;
@@ -26,21 +26,21 @@ public class WireButtonLeft : MonoBehaviour
             target = placeTarget.position;
         }
         wireScript.StretchBetween(source, target);
-        if (pressed == true) { cursor.SetActive(true); wire.SetActive(true); }
-        else
-        {
-            if (placed == false)
-            {
-                cursor.SetActive(false); wire.SetActive(false);
-            }
-            
-        }
-
-        if (placed == true)
-        {
-            gameObject.GetComponent<Button>().interactable = false;
-            cursor.SetActive(false);
-        }
+        // if (pressed == true) { cursor.SetActive(true); wire.SetActive(true); }
+        // else
+        // {
+        //     if (placed == false)
+        //     {
+        //         cursor.SetActive(false); wire.SetActive(false);
+        //     }
+        //
+        // }
+        //
+        // if (placed == true)
+        // {
+        //     gameObject.GetComponent<Button>().interactable = false;
+        //     cursor.SetActive(false);
+        // }
     }
 
     private void OnDrawGizmos()

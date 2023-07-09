@@ -3,7 +3,6 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using Core;
-using Tools.Utils;
 
 public class Progress2Script : MonoBehaviour
 {

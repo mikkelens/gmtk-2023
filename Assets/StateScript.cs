@@ -1,35 +1,35 @@
 using UnityEngine;
 using System.Collections;
 using Core;
+using Sirenix.OdinInspector;
+using Tools.Types;
 
 public class StateScript : MonoBehaviour
 {
-    [SerializeField] GameObject prefab;
-    [SerializeField] GameObject canvas;
-    public bool proceedState = false;
-    bool spawned = false;
-    public int waits;
-    bool mouseCoolDown;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Range<int> waitTime = new Range<int>(3, 8);
+    [SerializeField] private GameObject prefab;
+    [SerializeField] private GameObject canvas;
+
+    [field: ShowInInspector] public int Waits { get; set; }
+
+    public bool ProceedState { get; set; }
+    private bool _spawned;
+    private bool _mouseCoolDown;
 
     // Update is called once per frame
     void Update()
     {
-        if (waits < 4)
+        if (Waits < 4)
         {
-            if (proceedState)
+            if (ProceedState)
             {
-                spawned = false;
+                _spawned = false;
             }
             else
             {
-                if (!spawned) { spawned = true; StartCoroutine(Waiter()); }
+                if (!_spawned) { _spawned = true; StartCoroutine(Waiter()); }
                 if (Input.anyKeyDown) { PersistentGameManager.Instance.SusMeter += 2; }
-                if (Input.GetAxis("Mouse X") != 0 && mouseCoolDown == false)
+                if (Input.GetAxis("Mouse X") != 0 && _mouseCoolDown == false)
                 {
                     PersistentGameManager.Instance.SusMeter += 2;
                     StartCoroutine(CoolDown());
@@ -37,27 +37,18 @@ public class StateScript : MonoBehaviour
                 }
             }
         }
-        else
-        {
-
-
-        }
     }
 
     private IEnumerator Waiter()
     {
-        
-        yield return new WaitForSeconds(Random.Range(25,36));
-        proceedState = true;
-        var button = Instantiate(prefab);
-        button.transform.parent = canvas.gameObject.transform;
+        yield return new WaitForSeconds(Random.Range(waitTime.Min,waitTime.Max + 1));
+        ProceedState = true;
+        Instantiate(prefab, canvas.gameObject.transform, true);
     }
     private IEnumerator CoolDown()
     {
-        mouseCoolDown = true;
+        _mouseCoolDown = true;
         yield return new WaitForSeconds(1);
-        mouseCoolDown = false;
+        _mouseCoolDown = false;
     }
-
-
 }

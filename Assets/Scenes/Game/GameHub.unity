@@ -589,7 +589,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1044983086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1169,8 +1169,24 @@ PrefabInstance:
       value: EVADE TAXES
       objectReference: {fileID: 0}
     - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: nextSegmentHotkey.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: nextSegmentHotkey.m_SingletonActionBindings.Array.data[0].m_Id
+      value: f6a8892a-ac39-420a-8f74-b590e1195da6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
       propertyPath: levels.Array.data[0].<ActionSegments>k__BackingField.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: nextSegmentHotkey.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/s
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
+      propertyPath: nextSegmentHotkey.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Next Segment Hotkey
       objectReference: {fileID: 0}
     - target: {fileID: 4412257500034927309, guid: 54f31555afc88ab4582a998fcbbf54d4, type: 3}
       propertyPath: levels.Array.data[0].<PreparationSegments>k__BackingField.Array.size

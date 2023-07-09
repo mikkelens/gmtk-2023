@@ -37,6 +37,6 @@ public class IDMakerReturn : MonoBehaviour
 	        EXP = (EXP.input.text, EXP.input.text == EXP.expected.text),
 	        ID = (ID.input.text, ID.input.text == ID.expected.text)
         };
-        PersistentGameManager.Instance.ReturnToHub();
+        PersistentGameManager.Instance.NextSegment();
     }
 }

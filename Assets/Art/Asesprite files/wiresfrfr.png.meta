@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 49261edb36e5c5a4f97e57bf6bd364b6
+guid: be5a70f4b2e1bf94b8d42bd67f110ef0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,169 +123,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FunnyBombSpritesheet_0
+      name: wiresfrfr_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 202
-        width: 28
-        height: 156
+        x: 16
+        y: 117
+        width: 85
+        height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 31, z: 0, w: 31}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7c72ae6677f2c804a94688567c6a5624
-      internalID: -1292454423
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FunnyBombSpritesheet_1
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 6
-        width: 314
-        height: 338
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 137aa7092e91acb48af88725835526f0
-      internalID: -1726224185
+      spriteID: fd63ec4e36f1a4f4ea018edb35945537
+      internalID: 532582549
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FunnyBombSpritesheet_2
+      name: wiresfrfr_1
       rect:
         serializedVersion: 2
-        x: 2
-        y: 152
-        width: 38
-        height: 34
+        x: 16
+        y: 85
+        width: 85
+        height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6701eb846f3d6c6479cbe85342dd9df0
-      internalID: -790878889
+      spriteID: 8499f44fabd240546ad9e81fe098c140
+      internalID: 466044882
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FunnyBombSpritesheet_3
+      name: wiresfrfr_2
       rect:
         serializedVersion: 2
-        x: 45
-        y: 152
-        width: 38
-        height: 28
+        x: 16
+        y: 53
+        width: 85
+        height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac21eb50b4ffc6044beb1404d9eb17d7
-      internalID: -1400438448
+      spriteID: fb1083bcc0a22fb49b9b2b4acfa6f35c
+      internalID: -479456642
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FunnyBombSpritesheet_4
+      name: wiresfrfr_3
       rect:
         serializedVersion: 2
-        x: 2
-        y: 104
-        width: 38
-        height: 34
+        x: 16
+        y: 21
+        width: 85
+        height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ca878dc0f020b24c8c66067f360f76c
-      internalID: 426168898
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FunnyBombSpritesheet_5
-      rect:
-        serializedVersion: 2
-        x: 45
-        y: 104
-        width: 38
-        height: 28
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ca63ef6853172434f9ff1205f34e8729
-      internalID: -151839523
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FunnyBombSpritesheet_6
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 56
-        width: 38
-        height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1983459c3ee6aa64f9a076a11b4737fe
-      internalID: 2027206228
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FunnyBombSpritesheet_7
-      rect:
-        serializedVersion: 2
-        x: 45
-        y: 56
-        width: 38
-        height: 28
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e4b346f0f874171439412ddda2e53506
-      internalID: 528144532
+      spriteID: 34410f311e4afa644a1fb8746af2bc8e
+      internalID: 1415638084
       vertices: []
       indices: 
       edges: []
@@ -301,14 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      FunnyBombSpritesheet_0: -1292454423
-      FunnyBombSpritesheet_1: -1726224185
-      FunnyBombSpritesheet_2: -790878889
-      FunnyBombSpritesheet_3: -1400438448
-      FunnyBombSpritesheet_4: 426168898
-      FunnyBombSpritesheet_5: -151839523
-      FunnyBombSpritesheet_6: 2027206228
-      FunnyBombSpritesheet_7: 528144532
+      wiresfrfr_0: 532582549
+      wiresfrfr_1: 466044882
+      wiresfrfr_2: -479456642
+      wiresfrfr_3: 1415638084
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,3 +1,4 @@
+using System.Linq;
 using Core;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -8,7 +9,7 @@ public class CodeActivationButton : MonoBehaviour
 
     public void Pressed()
     {
-	    if (PersistentGameManager.Instance.BombData.PIN == codeScript.code.ToCharArray())
+	    if (PersistentGameManager.Instance.BombData.PIN.SequenceEqual(codeScript.code.ToCharArray()))
 	    {
 		    PersistentGameManager.Instance.GoToEnding();
 	    }

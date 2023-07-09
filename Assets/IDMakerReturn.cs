@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using Core;
 using Core.Data;
 using Sirenix.OdinInspector;
@@ -30,12 +31,12 @@ public class IDMakerReturn : MonoBehaviour
     {
         PersistentGameManager.Instance.Passport = new Passport
         {
-	        NAME = (NAME.input.text, NAME.input.text.ToCharArray() == NAME.expected.text.ToCharArray()),
-	        DOB = (DOB.input.text, DOB.input.text.ToCharArray() == DOB.expected.text.ToCharArray()),
-	        Sex = (Sex.input.text, Sex.input.text.ToCharArray() == Sex.expected.text.ToCharArray()),
-	        ISS = (ISS.input.text, ISS.input.text.ToCharArray() == ISS.expected.text.ToCharArray()),
-	        EXP = (EXP.input.text, EXP.input.text.ToCharArray() == EXP.expected.text.ToCharArray()),
-	        ID = (ID.input.text, ID.input.text.ToCharArray() == ID.expected.text.ToCharArray())
+	        NAME = (NAME.input.text, NAME.input.text.SequenceEqual(NAME.expected.text)),
+	        DOB = (DOB.input.text, DOB.input.text.SequenceEqual(DOB.expected.text)),
+	        Sex = (Sex.input.text, Sex.input.text.SequenceEqual(Sex.expected.text)),
+	        ISS = (ISS.input.text, ISS.input.text.SequenceEqual(ISS.expected.text)),
+	        EXP = (EXP.input.text, EXP.input.text.SequenceEqual(EXP.expected.text)),
+	        ID = (ID.input.text, ID.input.text.SequenceEqual(ID.expected.text))
         };
         PersistentGameManager.Instance.NextSegment();
     }

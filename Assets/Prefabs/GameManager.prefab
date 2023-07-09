@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4412257500034927309
 MonoBehaviour:
@@ -121,13 +121,30 @@ MonoBehaviour:
   gameOver:
     sceneAsset: {fileID: 0}
     scenePath: 
-  allLevelScenes: []
+  allLevelScenes:
+  - sceneAsset: {fileID: 102900000, guid: f084df28f1c9861428e7e223ef2d2fe7, type: 3}
+    scenePath: Assets/Scenes/Game/GameHub.unity
+  - sceneAsset: {fileID: 102900000, guid: 6aa09ebd3286a4d43b3525b02251fa52, type: 3}
+    scenePath: Assets/Scenes/Game/GameIDmaker.unity
+  - sceneAsset: {fileID: 102900000, guid: db20a8738c0bac24e8299617533997b0, type: 3}
+    scenePath: Assets/Scenes/Game/GameBombCook.unity
+  - sceneAsset: {fileID: 102900000, guid: 1982d6360314105418584cfe13c3b3c9, type: 3}
+    scenePath: Assets/Scenes/Game/GameQueueSim.unity
+  - sceneAsset: {fileID: 102900000, guid: 2cbdc381334bb7a4aa81e7b3c34b5039, type: 3}
+    scenePath: Assets/Scenes/Game/GameDialogueCheck.unity
+  - sceneAsset: {fileID: 102900000, guid: 623447042068d3d4da46f0a67274443e, type: 3}
+    scenePath: Assets/Scenes/Game/GameEnterCode.unity
+  - sceneAsset: {fileID: 102900000, guid: 0dd95496a6f00c1489ce6c5d10612d9d, type: 3}
+    scenePath: Assets/Scenes/Game/Ending.unity
   levels:
   - <Name>k__BackingField: BLOW UP THE WORLD
     <PreparationSegments>k__BackingField:
     - <SegmentScene>k__BackingField:
-        sceneAsset: {fileID: 102900000, guid: 0a5291cceedbf804b8a8e273ad4e67f4, type: 3}
-        scenePath: Assets/Scenes/Game/GameDressUp.unity
+        sceneAsset: {fileID: 102900000, guid: 6aa09ebd3286a4d43b3525b02251fa52, type: 3}
+        scenePath: Assets/Scenes/Game/GameIDmaker.unity
+    - <SegmentScene>k__BackingField:
+        sceneAsset: {fileID: 102900000, guid: db20a8738c0bac24e8299617533997b0, type: 3}
+        scenePath: Assets/Scenes/Game/GameBombCook.unity
     <ActionSegments>k__BackingField:
     - <SegmentScene>k__BackingField:
         sceneAsset: {fileID: 102900000, guid: 1982d6360314105418584cfe13c3b3c9, type: 3}
@@ -136,17 +153,17 @@ MonoBehaviour:
         sceneAsset: {fileID: 0}
         scenePath: 
     - <SegmentScene>k__BackingField:
-        sceneAsset: {fileID: 102900000, guid: db20a8738c0bac24e8299617533997b0, type: 3}
-        scenePath: Assets/Scenes/Game/GameBombCook.unity
+        sceneAsset: {fileID: 102900000, guid: 2cbdc381334bb7a4aa81e7b3c34b5039, type: 3}
+        scenePath: Assets/Scenes/Game/GameDialogueCheck.unity
       <FailScene>k__BackingField:
         sceneAsset: {fileID: 0}
         scenePath: 
-    <Ending>k__BackingField: []
-  - <Name>k__BackingField: SMUGGLE
-    <PreparationSegments>k__BackingField: []
-    <ActionSegments>k__BackingField: []
-    <Ending>k__BackingField: []
-  - <Name>k__BackingField: EVADE TAXES
-    <PreparationSegments>k__BackingField: []
-    <ActionSegments>k__BackingField: []
-    <Ending>k__BackingField: []
+    - <SegmentScene>k__BackingField:
+        sceneAsset: {fileID: 102900000, guid: 623447042068d3d4da46f0a67274443e, type: 3}
+        scenePath: Assets/Scenes/Game/GameEnterCode.unity
+      <FailScene>k__BackingField:
+        sceneAsset: {fileID: 0}
+        scenePath: 
+    <Ending>k__BackingField:
+      sceneAsset: {fileID: 102900000, guid: 0dd95496a6f00c1489ce6c5d10612d9d, type: 3}
+      scenePath: Assets/Scenes/Game/Ending.unity

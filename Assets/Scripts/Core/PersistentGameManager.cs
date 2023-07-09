@@ -46,7 +46,7 @@ namespace Core
                     allLevelScenes.AddRange(level.PreparationSegments.Select(x => x.SegmentScene));
                     allLevelScenes.AddRange(level.ActionSegments.Select(x => x.SegmentScene));
                     allLevelScenes.AddRange(level.ActionSegments.Select(x => x.FailScene));
-                    allLevelScenes.AddRange(level.Ending);
+                    allLevelScenes.Add(level.Ending);
                 }
                 allLevelScenes.RemoveAll(x => x.ScenePath == string.Empty);
 

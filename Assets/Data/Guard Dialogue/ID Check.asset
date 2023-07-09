@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc7696d3b74a43cd9b9c029eeba04d78, type: 3}
   m_Name: ID Check
   m_EditorClassIdentifier: 
-  <Prompt>k__BackingField: Let me see your identification.
+  <GuardPrompt>k__BackingField: Let me see your ID.
   <AnswerButtonText>k__BackingField: Here

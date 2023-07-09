@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a43db74ba75411a81c0580a04ff36ab, type: 3}
+  m_Name: Stupid Question
+  m_EditorClassIdentifier: 
+  <Prompt>k__BackingField: Are you here to break the law? Yes or No.
+  <Options>k__BackingField:
+  - <Reply>k__BackingField: Yes
+    <Response>k__BackingField: That is not funny.
+    <SusAmount>k__BackingField: 50
+  - <Reply>k__BackingField: No
+    <Response>k__BackingField: Good.
+    <SusAmount>k__BackingField: 0
+  - <Reply>k__BackingField: Why would anyone answer yes to such a question?
+    <Response>k__BackingField: You sure would like to know.
+    <SusAmount>k__BackingField: 10

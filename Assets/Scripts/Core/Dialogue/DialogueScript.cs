@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using Core.Data;
 using Sirenix.OdinInspector;
+using Tools.Types;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 namespace Core.Dialogue
 {
-	public class DialogueScript : MonoBehaviour
+	public class DialogueScript : Singleton<DialogueScript>
 	{
 		[SerializeField] private List<DialogueCheck> checkList;
 		[ShowInInspector, ReadOnly] private List<DialogueCheck> _remainingChecks;
@@ -24,18 +25,11 @@ namespace Core.Dialogue
 		[SerializeField] private string detectionString = "!";
 		[SerializeField] private string undetectedString = "Alright, carry on.";
 
-		[Header("Decision references")]
-		[SerializeField, Required] private TextAnimateScript option1Text;
-		[SerializeField, Required] private TextAnimateScript option2Text;
-		[SerializeField, Required] private TextAnimateScript option3Text;
-		[SerializeField, Required] private Button option1Button;
-		[SerializeField, Required] private Button option2Button;
-		[SerializeField, Required] private Button option3Button;
-
-		[Header("Generic prompt stuff")]
-		[SerializeField, Required] private TextAnimateScript promptAnswerText;
-		[SerializeField, Required] private Button promptAnswerButton;
-
+		[Header("Option references")]
+		[SerializeField, Required] private RectTransform dialogueButtonParent;
+		[SerializeField, Required, AssetsOnly] private Button dialogueOptionButtonPrefab;
+		private readonly List<Button> _spawnedButtons = new List<Button>();
+		private readonly List<TextAnimateScript> _spawnedButtonTexts = new List<TextAnimateScript>();
 
 		[SerializeField] private float pauseAfterMessage = 0.3f;
 		[SerializeField] private float susDetectedDelay = 1f;
@@ -44,18 +38,8 @@ namespace Core.Dialogue
 		private void Start()
 		{
 			_remainingChecks = new List<DialogueCheck>(checkList);
-			// SetDecisionButtonTextEmpty();
-			SetDecisionButtonsVisible(false);
-			SetPromptButtonVisible(false);
+			SetButtonsActive(false);
 			StartCoroutine(WaitThenStart());
-		}
-		private void SetPromptButtonVisible(bool setVisible)
-		{
-			promptAnswerButton.gameObject.SetActive(setVisible);
-		}
-		private void SetPromptButtonInteractable(bool setInteractable)
-		{
-			promptAnswerButton.interactable = setInteractable;
 		}
 
 		private IEnumerator WaitThenStart()
@@ -66,7 +50,7 @@ namespace Core.Dialogue
 
 		private bool AnyTextAnimating()
 		{
-			return guardText.Animating | option1Text.Animating | option2Text.Animating | option3Text.Animating;
+			return guardText.Animating | _spawnedButtonTexts.Any(x => x.Animating);
 		}
 
 		private void GoNextCheck()
@@ -79,101 +63,130 @@ namespace Core.Dialogue
 			}
 			_currentCheck = next;
 			_remainingChecks.Remove(next);
-			if (_currentCheck is DialogueDecisionCheck decisionCheck)
+			if (_currentCheck is Decision decisionCheck)
 			{
 				StartCoroutine(DisplayDecisionOptionsThenEnable(decisionCheck));
 			}
-			else if (_currentCheck is DialoguePassportCheck passportCheck)
+			else if (_currentCheck is Prompt passportCheck)
 			{
-				StartCoroutine(PassportCheck(passportCheck));
+				StartCoroutine(PromptCheck(passportCheck));
 			}
 		}
+
 		#region Decision check
-		private IEnumerator DisplayDecisionOptionsThenEnable(DialogueDecisionCheck decisionCheck)
+		private IEnumerator DisplayDecisionOptionsThenEnable(Decision decision)
 		{
-			SetDecisionButtonsInteractable(false);
-			StartCoroutine(option1Text.AnimateTextReplace(decisionCheck.Option1.Content));
-			StartCoroutine(option2Text.AnimateTextReplace(decisionCheck.Option2.Content));
-			StartCoroutine(option3Text.AnimateTextReplace(decisionCheck.Option3.Content));
+			DestroyButtons();
+			yield return guardText.AnimateTextReplace(decision.Prompt);
+			yield return new WaitForSeconds(pauseAfterMessage);
+
+			// spawn buttons
+			for (int i = 0; i < decision.Options.Count; i++)
+			{
+				Button newOptionButton = Instantiate(dialogueOptionButtonPrefab, dialogueButtonParent);
+				DialogueButtonScript buttonScript = newOptionButton.GetComponent<DialogueButtonScript>();
+				buttonScript.MyIndex = i;
+				_spawnedButtons.Add(newOptionButton);
+				_spawnedButtonTexts.Add(newOptionButton.GetComponentInChildren<TextAnimateScript>());
+			}
+			SetButtonsActive(true);
+			SetButtonsInteractable(false);
+
+			// show text on buttons
+			for (int i = 0; i < decision.Options.Count; i++)
+			{
+				TextAnimateScript optionText = _spawnedButtonTexts[i];
+				Decision.Option option = decision.Options[i];
+				StartCoroutine(optionText.AnimateTextReplace(option.Reply));
+			}
 			yield return new WaitWhile(AnyTextAnimating);
 			yield return new WaitForSeconds(pauseAfterMessage);
-			SetDecisionButtonsInteractable(true);
+			SetButtonsInteractable(true); // let player interact with buttons, sparking next part
 		}
-		public void ChooseOption1()
+		public void ChooseOption(int optionIndex) // accessed by buttons
 		{
-			if (_currentCheck is not DialogueDecisionCheck decisionCheck)
+			if (_currentCheck is Decision decisionCheck)
+			{
+				SelectDialogueOption(decisionCheck, optionIndex);
+			}
+			else if (_currentCheck is Prompt)
+			{
+				HasAnsweredPrompt = true;
+			}
+			else
 			{
 				Debug.LogError("Not a decision check, please hide this button!");
-				return;
 			}
-			SelectDialogueOption(decisionCheck.Option1);
 		}
-		public void ChooseOption2()
+		private void SelectDialogueOption(Decision decision, int optionIndex)
 		{
-			if (_currentCheck is not DialogueDecisionCheck decisionCheck)
-			{
-				Debug.LogError("Not a decision check, please hide this button!");
-				return;
-			}
-			SelectDialogueOption(decisionCheck.Option2);
+			StartCoroutine(RespondToDecision(decision, optionIndex));
 		}
-		public void ChooseOption3()
+		private IEnumerator RespondToDecision(Decision decision, int optionIndex)
 		{
-			if (_currentCheck is not DialogueDecisionCheck decisionCheck)
-			{
-				Debug.LogError("Not a decision check, please hide this button!");
-				return;
-			}
-			SelectDialogueOption(decisionCheck.Option3);
-		}
-		private void SelectDialogueOption(DialogueDecisionCheck.Decision chosenDecision)
-		{
-			StartCoroutine(guardText.AnimateTextReplace(chosenDecision.Response.Reply));
-			StartCoroutine(WaitThenDecide(chosenDecision));
-		}
-		private IEnumerator WaitThenDecide(DialogueDecisionCheck.Decision chosenDecision)
-		{
-			SetDecisionButtonTextEmpty();
-			SetDecisionButtonsInteractable(false);
+			SetButtonsInteractable(false);
+			SetButtonTextEmpty(optionIndex); // all except the one we chose
+			Decision.Option option = decision.Options[optionIndex];
+			yield return guardText.AnimateTextReplace(option.Response);
 			yield return new WaitWhile(AnyTextAnimating);
 			yield return new WaitForSeconds(pauseAfterMessage);
-			yield return AddSusAndContinue(chosenDecision.Response.SusAmount);
-		}
-		private void SetDecisionButtonsVisible(bool setVisible)
-		{
-			option1Button.gameObject.SetActive(setVisible);
-			option2Button.gameObject.SetActive(setVisible);
-			option3Button.gameObject.SetActive(setVisible);
-		}
-		private void SetDecisionButtonsInteractable(bool setInteractable)
-		{
-			option1Button.interactable = setInteractable;
-			option2Button.interactable = setInteractable;
-			option3Button.interactable = setInteractable;
-		}
-		private void SetDecisionButtonTextEmpty()
-		{
-			option1Text.ClearText();
-			option2Text.ClearText();
-			option3Text.ClearText();
+			yield return AddSusAndContinue(option.SusAmount);
 		}
 		#endregion
 
+		private void DestroyButtons()
+		{
+			foreach (Button spawnedButton in _spawnedButtons)
+			{
+				Destroy(spawnedButton.gameObject);
+			}
+			_spawnedButtons.Clear();
+			_spawnedButtonTexts.Clear();
+		}
+		private void SetButtonsActive(bool setActive)
+		{
+			foreach (Button button in _spawnedButtons)
+			{
+				button.gameObject.SetActive(setActive);
+			}
+		}
+		private void SetButtonsInteractable(bool setInteractable)
+		{
+			foreach (Button button in _spawnedButtons)
+			{
+				button.interactable = setInteractable;
+			}
+		}
+		private void SetButtonTextEmpty(int? indexToIgnore = null)
+		{
+			for (int i = 0; i < _spawnedButtons.Count; i++)
+			{
+				if (i == indexToIgnore) continue;
+				_spawnedButtonTexts[i].ClearText();
+			}
+		}
+
 		#region Passport check
 		private bool HasAnsweredPrompt { get; set; } // set externally
-		private IEnumerator PassportCheck(DialoguePassportCheck dialoguePassportCheck)
+		private IEnumerator PromptCheck(Prompt prompt)
 		{
+			DestroyButtons();
+			Button promptButton = Instantiate(dialogueOptionButtonPrefab, dialogueButtonParent);
+			TextAnimateScript textScript = promptButton.GetComponentInChildren<TextAnimateScript>();
+			_spawnedButtons.Add(promptButton);
+			_spawnedButtonTexts.Add(textScript);
+
 			HasAnsweredPrompt = false;
-			SetPromptButtonVisible(true);
-			SetPromptButtonInteractable(false);
-			yield return guardText.AnimateTextReplace(dialoguePassportCheck.Prompt); // "can I see your passport"
+			SetButtonsActive(true);
+			SetButtonsInteractable(false);
+			yield return guardText.AnimateTextReplace(prompt.GuardPrompt); // "can I see your passport"
 			yield return new WaitForSeconds(pauseAfterMessage);
-			yield return promptAnswerText.AnimateTextReplace(dialoguePassportCheck.AnswerButtonText);
+			yield return textScript.AnimateTextReplace(prompt.AnswerButtonText);
 			yield return new WaitForSeconds(pauseAfterMessage);
-			SetPromptButtonInteractable(true);
+			SetButtonsInteractable(true);
 			yield return new WaitUntil(() => HasAnsweredPrompt);
 			HasAnsweredPrompt = false;
-			SetPromptButtonInteractable(false);
+			SetButtonsInteractable(false);
 
 			// calculate sus
 			int susIncrease = 0;
@@ -188,7 +201,7 @@ namespace Core.Dialogue
 				yield return guardText.AnimateTextAdd("...");
 				yield return new WaitForSeconds(susDetectedDelay);
 			}
-			SetPromptButtonVisible(false);
+			SetButtonsActive(false);
 			yield return AddSusAndContinue(susIncrease);
 		}
 		#endregion
@@ -226,8 +239,8 @@ namespace Core.Dialogue
 		{
 			Debug.Log("SUS!!!!");
 			// remove options
-			SetDecisionButtonTextEmpty();
-			SetDecisionButtonsInteractable(false);
+			SetButtonTextEmpty();
+			SetButtonsInteractable(false);
 
 			yield return StartCoroutine(guardText.AnimateTextReplace(detectionString));
 			yield return new WaitForSeconds(susDetectedDelay);
@@ -238,8 +251,8 @@ namespace Core.Dialogue
 		{
 			Debug.Log("Not sus.");
 			// remove options
-			SetDecisionButtonTextEmpty();
-			SetDecisionButtonsInteractable(false);
+			SetButtonTextEmpty();
+			SetButtonsInteractable(false);
 
 			// wait then continue/return
 			AddSus(-100);

@@ -12,7 +12,7 @@ namespace Core
 		[field: SerializeField, UsedImplicitly] public string Name { get; private set; } = "Unnamed Level";
 		[field: SerializeField] public List<Segment> PreparationSegments { get; private set; }
 		[field: SerializeField] public List<ActionSegment> ActionSegments { get; private set; }
-		[field: SerializeField] public List<SceneReference> Ending { get; private set; }
+		[field: SerializeField] public SceneReference Ending { get; private set; }
 
 		[NonSerialized] public List<Segment> remainingSegments;
 

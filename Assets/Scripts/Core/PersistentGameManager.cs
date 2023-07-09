@@ -113,14 +113,7 @@ namespace Core
 
         private void Start()
         {
-            BombData = new BombData(new []
-            {
-                Random.Range(0, 10).ToString()[0],
-                Random.Range(0, 10).ToString()[0],
-                Random.Range(0, 10).ToString()[0],
-                Random.Range(0, 10).ToString()[0]
-            });
-            _remainingLevels = new List<Level>(levels);
+            ResetState();
             _uiManager = GetUIInfallible();
             _soundtrackManager = GetSoundtrackInfallible();
             #if UNITY_EDITOR
@@ -129,6 +122,19 @@ namespace Core
                 StartCoroutine(WaitThenFadeUp());
             }
         }
+
+        private void ResetState()
+        {
+            BombData = new BombData(new[]
+            {
+                Random.Range(0, 10).ToString()[0],
+                Random.Range(0, 10).ToString()[0],
+                Random.Range(0, 10).ToString()[0],
+                Random.Range(0, 10).ToString()[0]
+            });
+            _remainingLevels = new List<Level>(levels);
+        }
+
         private PersistentUIManager GetUIInfallible()
         {
             return PersistentUIManager.Exists ? PersistentUIManager.Instance : Instantiate(uiPrefab);
@@ -158,6 +164,7 @@ namespace Core
         {
             if (_loading || sceneType == SceneType.MainMenu) return;
             sceneType = SceneType.MainMenu;
+            ResetState();
             StartCoroutine(SmoothLoad(mainMenu));
         }
 

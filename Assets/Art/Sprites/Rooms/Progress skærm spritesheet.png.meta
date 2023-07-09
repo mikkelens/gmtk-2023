@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,232 +123,337 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AstronautWalk_01
+      name: "Progress sk\xE6rm spritesheet_0"
       rect:
         serializedVersion: 2
-        x: 5
-        y: 224
-        width: 17
-        height: 32
-      alignment: 9
-      pivot: {x: 0.54745257, y: -0.0021009445}
+        x: 0
+        y: 0
+        width: 640
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee8003976c0f66743994ddb63fc2744d
-      internalID: 21300000
+      spriteID: f6179481a85b0a949adf396866241fa9
+      internalID: 557507818
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AstronautWalk_02
+      name: "Progress sk\xE6rm spritesheet_1"
       rect:
         serializedVersion: 2
-        x: 38
-        y: 224
-        width: 16
-        height: 32
-      alignment: 9
-      pivot: {x: 0.52520895, y: 0}
+        x: 674
+        y: 239
+        width: 101
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96331e7fcccfd3d4cbe925fa50d2b221
-      internalID: 21300002
+      spriteID: cae7eec156cd4794aa968d556fa878e5
+      internalID: -1425448171
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AstronautWalk_03
+      name: "Progress sk\xE6rm spritesheet_2"
       rect:
         serializedVersion: 2
-        x: 71
-        y: 224
-        width: 15
-        height: 32
-      alignment: 9
-      pivot: {x: 0.508963, y: 0}
+        x: 777
+        y: 239
+        width: 101
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ff6d78b27c27e949a0ad9216b529164
-      internalID: 21300004
+      spriteID: 9b0d21a2e17676540b7a0a1b8fd0be61
+      internalID: -2064098501
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AstronautWalk_04
+      name: "Progress sk\xE6rm spritesheet_3"
       rect:
         serializedVersion: 2
-        x: 103
-        y: 224
-        width: 15
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 880
+        y: 239
+        width: 101
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33427e50e2b984140b53ced1d0931408
-      internalID: 21300006
+      spriteID: 5c7d4c64553db154890386638d9ba823
+      internalID: -641239948
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AstronautWalk_05
+      name: "Progress sk\xE6rm spritesheet_4"
       rect:
         serializedVersion: 2
-        x: 7
-        y: 191
-        width: 15
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 983
+        y: 233
+        width: 101
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3c176ae2c1189f4fa58098deb1606a3
-      internalID: 21300008
+      spriteID: d7407569266721e41a27baf7993b610f
+      internalID: 593768543
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AstronautWalk_06
+      name: "Progress sk\xE6rm spritesheet_5"
       rect:
         serializedVersion: 2
-        x: 38
-        y: 191
-        width: 16
-        height: 32
-      alignment: 9
-      pivot: {x: 0.52941036, y: 0.0021004677}
+        x: 661
+        y: 134
+        width: 67
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5345b3c8bbea634fb24b59a1563d5ed
-      internalID: 21300010
+      spriteID: c8a91fb9f8640d24292e37ae95f59b15
+      internalID: -563704328
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AstronautIdle
+      name: "Progress sk\xE6rm spritesheet_6"
       rect:
         serializedVersion: 2
-        x: 6
-        y: 140
-        width: 15
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5196411, y: 0.0013155937}
+        x: 802
+        y: 130
+        width: 72
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4a4da522c0a1dc46891a49f527a4ad2
-      internalID: 21300014
+      spriteID: 10f53eaa46f31344ea5925994fd0d16e
+      internalID: 1710121931
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AstronautJump
+      name: "Progress sk\xE6rm spritesheet_7"
       rect:
         serializedVersion: 2
-        x: 30
-        y: 140
-        width: 17
-        height: 31
-      alignment: 9
-      pivot: {x: 0.5149484, y: 0.0016395815}
+        x: 931
+        y: 87
+        width: 193
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81640a2191f29254195c38d71a36bfb2
-      internalID: 21300016
+      spriteID: 259e635d3f2c6e24d8bccb3f61cdf7e0
+      internalID: 388247934
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AstronautArm
+      name: "Progress sk\xE6rm spritesheet_8"
       rect:
         serializedVersion: 2
-        x: 57
-        y: 153
-        width: 12
-        height: 5
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
+        x: 662
+        y: 110
+        width: 77
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7cbbad4cfa32d524588159f552113399
-      internalID: 21300018
+      spriteID: b83da6c63ad68964f9895ca25485f06a
+      internalID: 169929602
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AstronautBigGun
+      name: "Progress sk\xE6rm spritesheet_9"
       rect:
         serializedVersion: 2
-        x: 77
-        y: 155
-        width: 24
-        height: 9
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
+        x: 803
+        y: 106
+        width: 76
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 064df71b5e374f449b6b10276df8191d
-      internalID: 21300020
+      spriteID: 8f25d20f30d1d4d4d875c0a59858ba44
+      internalID: -122633181
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AstronautPistol
+      name: "Progress sk\xE6rm spritesheet_10"
       rect:
         serializedVersion: 2
-        x: 77
-        y: 149
-        width: 5
-        height: 4
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
+        x: 656
+        y: 82
+        width: 118
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f1ad5cced2c5e04e900ab199535e945
-      internalID: 21300022
+      spriteID: 9fdcbf48aa3fdd446bee9acfe4c811ad
+      internalID: 1711339583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Progress sk\xE6rm spritesheet_11"
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 78
+        width: 122
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0220e654f9dbd849b1f6518e3c5dbb3
+      internalID: -2016507408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Progress sk\xE6rm spritesheet_12"
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 53
+        width: 94
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8173278a31464945baff0a0f71fdf92
+      internalID: 1349069430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Progress sk\xE6rm spritesheet_13"
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 49
+        width: 91
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06aaa5a8698ab1847a6a732f16c8e1e0
+      internalID: -1119399836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Progress sk\xE6rm spritesheet_14"
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 17
+        width: 72
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0e7099e84cb5a542a8706f6d37e3cba
+      internalID: -789382952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Progress sk\xE6rm spritesheet_15"
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 13
+        width: 76
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d3e899c7f134394b8c5076ba049ce3b
+      internalID: 2023254727
       vertices: []
       indices: 
       edges: []
@@ -364,17 +469,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      AstronautArm: 21300018
-      AstronautBigGun: 21300020
-      AstronautIdle: 21300014
-      AstronautJump: 21300016
-      AstronautPistol: 21300022
-      AstronautWalk_01: 21300000
-      AstronautWalk_02: 21300002
-      AstronautWalk_03: 21300004
-      AstronautWalk_04: 21300006
-      AstronautWalk_05: 21300008
-      AstronautWalk_06: 21300010
+      "Progress sk\xE6rm spritesheet_0": 557507818
+      "Progress sk\xE6rm spritesheet_1": -1425448171
+      "Progress sk\xE6rm spritesheet_10": 1711339583
+      "Progress sk\xE6rm spritesheet_11": -2016507408
+      "Progress sk\xE6rm spritesheet_12": 1349069430
+      "Progress sk\xE6rm spritesheet_13": -1119399836
+      "Progress sk\xE6rm spritesheet_14": -789382952
+      "Progress sk\xE6rm spritesheet_15": 2023254727
+      "Progress sk\xE6rm spritesheet_2": -2064098501
+      "Progress sk\xE6rm spritesheet_3": -641239948
+      "Progress sk\xE6rm spritesheet_4": 593768543
+      "Progress sk\xE6rm spritesheet_5": -563704328
+      "Progress sk\xE6rm spritesheet_6": 1710121931
+      "Progress sk\xE6rm spritesheet_7": 388247934
+      "Progress sk\xE6rm spritesheet_8": 169929602
+      "Progress sk\xE6rm spritesheet_9": -122633181
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

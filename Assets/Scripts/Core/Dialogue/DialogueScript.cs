@@ -191,7 +191,7 @@ namespace Core.Dialogue
 			SetButtonsInteractable(false);
 
 			passportAnim.SetTrigger(giveTrigger);
-			float length = passportAnim.GetNextAnimatorStateInfo(0).length;
+			float length = 1f;
 			yield return new WaitForSeconds(length);
 			yield return new WaitForSeconds(pauseAfterMessage);
 

@@ -23,6 +23,7 @@ namespace Core
         #region Inspector
         [SerializeField] private float smoothLoadTime = 0.25f;
         [SerializeField, Required, AssetsOnly] private PersistentUIManager uiPrefab;
+        [SerializeField, Required, AssetsOnly] private PersistentSoundtrackManager soundtrackPrefab;
 
         [Header("Levels and Scenes")]
         [SerializeField] private SceneType sceneType;
@@ -79,6 +80,7 @@ namespace Core
         #endregion
 
         private PersistentUIManager _uiManager;
+        private PersistentSoundtrackManager _soundtrackManager;
 
         #if UNITY_EDITOR // Scene debugging stuff
         private void OnEnable()
@@ -123,12 +125,24 @@ namespace Core
             });
             _remainingLevels = new List<Level>(levels);
             _uiManager = GetUIInfallible();
+            _soundtrackManager = GetSoundtrackInfallible();
             #if UNITY_EDITOR
             if (!_loading)
             {
                 StartCoroutine(WaitThenFadeUp());
             }
         }
+        private PersistentUIManager GetUIInfallible()
+        {
+            return PersistentUIManager.Exists ? PersistentUIManager.Instance : Instantiate(uiPrefab);
+        }
+        private PersistentSoundtrackManager GetSoundtrackInfallible()
+        {
+            return PersistentSoundtrackManager.Exists
+                ? PersistentSoundtrackManager.Instance
+                : Instantiate(soundtrackPrefab);
+        }
+
         private IEnumerator WaitThenFadeUp() // only used when starting playmode
         {
             yield return FadeToBlack(0.08f);
@@ -259,10 +273,5 @@ namespace Core
 
         public Passport Passport { get; set; }
         public BombData BombData { get; set; }
-
-        private PersistentUIManager GetUIInfallible()
-        {
-            return PersistentUIManager.Exists ? PersistentUIManager.Instance : Instantiate(uiPrefab);
-        }
     }
 }

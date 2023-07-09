@@ -10,6 +10,7 @@ public class StateScript : MonoBehaviour
     public bool proceedState = false;
     bool spawned = false;
     public int waits;
+    bool mouseCoolDown;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,8 +30,10 @@ public class StateScript : MonoBehaviour
             {
                 if (!spawned) { spawned = true; StartCoroutine(Waiter()); }
                 if (Input.anyKeyDown) { PersistentGameManager.Instance.SusMeter += 2; }
-                if (Input.GetAxis("Mouse X") != 0)
+                if (Input.GetAxis("Mouse X") != 0 && mouseCoolDown == false)
                 {
+                    PersistentGameManager.Instance.SusMeter += 2;
+                    StartCoroutine(CoolDown());
 
                 }
             }
@@ -50,6 +53,12 @@ public class StateScript : MonoBehaviour
         var button = Instantiate(prefab);
         button.transform.parent = canvas.gameObject.transform;
     }
+    private IEnumerator CoolDown()
+    {
+        mouseCoolDown = true;
+        yield return new WaitForSeconds(1);
+        mouseCoolDown = false;
+    }
 
-   
+
 }

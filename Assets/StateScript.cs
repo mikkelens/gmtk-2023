@@ -1,5 +1,6 @@
 using UnityEngine;
 using Core;
+using System.Collections;
 
 public class StateScript : MonoBehaviour
 {

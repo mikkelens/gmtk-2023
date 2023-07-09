@@ -30,12 +30,12 @@ public class IDMakerReturn : MonoBehaviour
     {
         PersistentGameManager.Instance.Passport = new Passport
         {
-	        NAME = (NAME.input.text, NAME.input.text == NAME.expected.text),
-	        DOB = (DOB.input.text, DOB.input.text == DOB.expected.text),
-	        Sex = (Sex.input.text, Sex.input.text == Sex.expected.text),
-	        ISS = (ISS.input.text, ISS.input.text == ISS.expected.text),
-	        EXP = (EXP.input.text, EXP.input.text == EXP.expected.text),
-	        ID = (ID.input.text, ID.input.text == ID.expected.text)
+	        NAME = (NAME.input.text, NAME.input.text.ToCharArray() == NAME.expected.text.ToCharArray()),
+	        DOB = (DOB.input.text, DOB.input.text.ToCharArray() == DOB.expected.text.ToCharArray()),
+	        Sex = (Sex.input.text, Sex.input.text.ToCharArray() == Sex.expected.text.ToCharArray()),
+	        ISS = (ISS.input.text, ISS.input.text.ToCharArray() == ISS.expected.text.ToCharArray()),
+	        EXP = (EXP.input.text, EXP.input.text.ToCharArray() == EXP.expected.text.ToCharArray()),
+	        ID = (ID.input.text, ID.input.text.ToCharArray() == ID.expected.text.ToCharArray())
         };
         PersistentGameManager.Instance.NextSegment();
     }

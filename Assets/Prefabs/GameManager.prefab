@@ -82,6 +82,8 @@ MonoBehaviour:
     sceneAsset: {fileID: 102900000, guid: f084df28f1c9861428e7e223ef2d2fe7, type: 3}
     scenePath: Assets/Scenes/Game/GameHub.unity
   allLevelScenes:
+  - sceneAsset: {fileID: 102900000, guid: 72a6317c2bf9b2944834319a96beb097, type: 3}
+    scenePath: Assets/Scenes/MainMenu.unity
   - sceneAsset: {fileID: 102900000, guid: f084df28f1c9861428e7e223ef2d2fe7, type: 3}
     scenePath: Assets/Scenes/Game/GameHub.unity
   - sceneAsset: {fileID: 102900000, guid: 6aa09ebd3286a4d43b3525b02251fa52, type: 3}
@@ -94,8 +96,14 @@ MonoBehaviour:
     scenePath: Assets/Scenes/Game/GameDialogueCheck.unity
   - sceneAsset: {fileID: 102900000, guid: 623447042068d3d4da46f0a67274443e, type: 3}
     scenePath: Assets/Scenes/Game/GameEnterCode.unity
-  - sceneAsset: {fileID: 102900000, guid: 0dd95496a6f00c1489ce6c5d10612d9d, type: 3}
-    scenePath: Assets/Scenes/Game/Ending.unity
+  - sceneAsset: {fileID: 102900000, guid: 96cfff134325ac548b9df0e2cbccc0b2, type: 3}
+    scenePath: Assets/Scenes/Game/GameFailure.unity
+  - sceneAsset: {fileID: 102900000, guid: 96cfff134325ac548b9df0e2cbccc0b2, type: 3}
+    scenePath: Assets/Scenes/Game/GameFailure.unity
+  - sceneAsset: {fileID: 102900000, guid: 96cfff134325ac548b9df0e2cbccc0b2, type: 3}
+    scenePath: Assets/Scenes/Game/GameFailure.unity
+  - sceneAsset: {fileID: 102900000, guid: 27f58b89ded1f0c438d10d96e4aad82e, type: 3}
+    scenePath: Assets/Scenes/Game/GameWin.unity
   levels:
   - <Name>k__BackingField: BLOW UP THE WORLD
     <PreparationSegments>k__BackingField:
@@ -110,20 +118,20 @@ MonoBehaviour:
         sceneAsset: {fileID: 102900000, guid: 1982d6360314105418584cfe13c3b3c9, type: 3}
         scenePath: Assets/Scenes/Game/GameQueueSim.unity
       <FailScene>k__BackingField:
-        sceneAsset: {fileID: 0}
-        scenePath: 
+        sceneAsset: {fileID: 102900000, guid: 96cfff134325ac548b9df0e2cbccc0b2, type: 3}
+        scenePath: Assets/Scenes/Game/GameFailure.unity
     - <SegmentScene>k__BackingField:
         sceneAsset: {fileID: 102900000, guid: 2cbdc381334bb7a4aa81e7b3c34b5039, type: 3}
         scenePath: Assets/Scenes/Game/GameDialogueCheck.unity
       <FailScene>k__BackingField:
-        sceneAsset: {fileID: 0}
-        scenePath: 
+        sceneAsset: {fileID: 102900000, guid: 96cfff134325ac548b9df0e2cbccc0b2, type: 3}
+        scenePath: Assets/Scenes/Game/GameFailure.unity
     - <SegmentScene>k__BackingField:
         sceneAsset: {fileID: 102900000, guid: 623447042068d3d4da46f0a67274443e, type: 3}
         scenePath: Assets/Scenes/Game/GameEnterCode.unity
       <FailScene>k__BackingField:
-        sceneAsset: {fileID: 0}
-        scenePath: 
+        sceneAsset: {fileID: 102900000, guid: 96cfff134325ac548b9df0e2cbccc0b2, type: 3}
+        scenePath: Assets/Scenes/Game/GameFailure.unity
     <Ending>k__BackingField:
-      sceneAsset: {fileID: 102900000, guid: 0dd95496a6f00c1489ce6c5d10612d9d, type: 3}
-      scenePath: Assets/Scenes/Game/Ending.unity
+      sceneAsset: {fileID: 102900000, guid: 27f58b89ded1f0c438d10d96e4aad82e, type: 3}
+      scenePath: Assets/Scenes/Game/GameWin.unity

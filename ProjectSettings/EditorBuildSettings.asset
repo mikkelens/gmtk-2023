@@ -24,6 +24,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Game/GameDialogueCheck.unity
     guid: 2cbdc381334bb7a4aa81e7b3c34b5039
   - enabled: 1
+    path: Assets/Scenes/Game/GameEnterCode.unity
+    guid: 623447042068d3d4da46f0a67274443e
+  - enabled: 1
+    path: Assets/Scenes/Game/GameFailure.unity
+    guid: 96cfff134325ac548b9df0e2cbccc0b2
+  - enabled: 1
     path: Assets/Scenes/Game/GameFailure.unity
     guid: 96cfff134325ac548b9df0e2cbccc0b2
   - enabled: 1

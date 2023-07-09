@@ -219,7 +219,7 @@ namespace Core
             StartCoroutine(SmoothLoad(_currentSegment.SegmentScene));
         }
 
-        private void GoToEnding()
+        public void GoToEnding()
         {
             StartCoroutine(SmoothLoad(_currentLevel.Ending));
         }
@@ -229,10 +229,9 @@ namespace Core
             if (_loading || sceneType == SceneType.Hub) return;
 
             Debug.Log("SUS SPOTTED");
-
             if (_currentSegment is not Level.ActionSegment actionSegment)
             {
-                Debug.LogError("Current segment is not an action segment!");
+                Debug.LogWarning("Current segment is not an action segment!");
                 return;
             }
 
@@ -280,7 +279,7 @@ namespace Core
 
         public int SusMeter { get ; set ; }
 
-        public Passport Passport { get; set; }
-        public BombData BombData { get; set; }
+        [field: ShowInInspector] public Passport Passport { get; set; }
+        [field: ShowInInspector] public BombData BombData { get; set; }
     }
 }
